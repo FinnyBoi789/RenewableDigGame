@@ -2121,6 +2121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1096232077998711156, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1838083765625025125, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_HapticImpulsePlayer
       value: 
@@ -2132,6 +2136,10 @@ PrefabInstance:
     - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Name
       value: Poke Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6102213085606525114, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_CurveInteractionDataProvider
@@ -2379,13 +2387,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ec444c5481606441b59f3589f6cc468, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8761522164870160259}
   m_SourcePrefab: {fileID: 100100000, guid: 3ec444c5481606441b59f3589f6cc468, type: 3}
+--- !u!137 &3485971479603105465 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -9006652649445441987, guid: 3ec444c5481606441b59f3589f6cc468, type: 3}
+  m_PrefabInstance: {fileID: 3702339003347628164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3813388660475598703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3ec444c5481606441b59f3589f6cc468, type: 3}
   m_PrefabInstance: {fileID: 3702339003347628164}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4584717630083354069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ec444c5481606441b59f3589f6cc468, type: 3}
+  m_PrefabInstance: {fileID: 3702339003347628164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8761522164870160259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584717630083354069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ad8792bb59b1746b02530c69e31cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  nearFarInteractor: {fileID: 1883230248363655243}
+  handMesh: {fileID: 3485971479603105465}
 --- !u!1001 &4338235989863673259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2438,6 +2473,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1096232077998711156, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1838083765625025125, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_HapticImpulsePlayer
       value: 
@@ -2449,6 +2488,10 @@ PrefabInstance:
     - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Name
       value: Poke Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259524632637961923, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2935,13 +2978,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1c9060d29b80ec46b5e6b858f4a40b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4379950089500647461}
   m_SourcePrefab: {fileID: 100100000, guid: c1c9060d29b80ec46b5e6b858f4a40b8, type: 3}
+--- !u!137 &351566829364634068 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1150277427674727411, guid: c1c9060d29b80ec46b5e6b858f4a40b8, type: 3}
+  m_PrefabInstance: {fileID: 8424089674176978393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8314447076589550130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1c9060d29b80ec46b5e6b858f4a40b8, type: 3}
   m_PrefabInstance: {fileID: 8424089674176978393}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8658461915881136264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1c9060d29b80ec46b5e6b858f4a40b8, type: 3}
+  m_PrefabInstance: {fileID: 8424089674176978393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4379950089500647461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8658461915881136264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ad8792bb59b1746b02530c69e31cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandAnimator
+  nearFarInteractor: {fileID: 8877177980677234388}
+  handMesh: {fileID: 351566829364634068}
 --- !u!1001 &8654467957078447927
 PrefabInstance:
   m_ObjectHideFlags: 0
