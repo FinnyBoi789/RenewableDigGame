@@ -12,8 +12,12 @@ public class HandAnimator : MonoBehaviour
 
     [SerializeField] private NearFarInteractor nearFarInteractor;
     [SerializeField] private SkinnedMeshRenderer handMesh;
-    [SerializeField] private inputActionReference selectActionReference;
-    [SerializeField] private inputActionReference activateActionReference;
+    [SerializeField] private InputActionReference selectActionReference;
+    [SerializeField] private InputActionReference activateActionReference;
+    [SerializeField] private Animator handAnimator;
+
+    private static readonly int activateAnim = Animator.StringToHash("activate");
+    private static readonly int selectAnim = Animator.StringToHash("select");
 
     private void Awake()
     {
@@ -36,6 +40,11 @@ public class HandAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float selectVal = selectActionReference.action?.ReadValue<float>() ?? 0f;
+        float activateVal = activateActionReference.action?.ReadValue<float>() ?? 0f;
+        Debug.Log($"Select: {selectVal:F2} | Activate: {activateVal:F2}");
+
+        handAnimator.SetFloat(activateAnim, activateActionReference.action.ReadValue<float>());
+        handAnimator.SetFloat(selectAnim, selectActionReference.action.ReadValue<float>());
     }
 }
