@@ -35,13 +35,13 @@ AnimatorController:
   m_Name: Hand_R
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Activate
+  - m_Name: activate
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Select
+  - m_Name: select
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -122,8 +122,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Activate
     m_Mirror: 0
-  m_BlendParameter: Activate
-  m_BlendParameterY: Select
+  m_BlendParameter: activate
+  m_BlendParameterY: select
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
