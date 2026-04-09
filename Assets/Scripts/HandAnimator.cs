@@ -9,7 +9,6 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class HandAnimator : MonoBehaviour
 {
-
     [SerializeField] private NearFarInteractor nearFarInteractor;
     [SerializeField] private SkinnedMeshRenderer handMesh;
     [SerializeField] private GameObject handArmature;
