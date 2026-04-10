@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f997f31a5135e4c4fa3aa2c7114b1ae4, type: 3}
+  m_Name: Crashed
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSequenceData
+  lines:
+  - text: Oh no! It seems that the spaceship has crash landed on this planet!
+    displayDuration: 4
+  - text: If I remember correctly, I was supposed to land somewhere to find something...
+    displayDuration: 4
+  - text: But I cannot for the life of me remember where I was supposed to land or
+      what I was supposed to find...
+    displayDuration: 4
+  - text: I wonder if my scanner can help me at all...
+    displayDuration: 4

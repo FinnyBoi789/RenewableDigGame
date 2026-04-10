@@ -15,7 +15,12 @@ public class UIManager : MonoBehaviour
     public void ShowInfo(string name, string description)
     {
         panel.SetActive(true);
-        nameText.text = Scannable.objectName;
-        descriptionText.text = Scannable.objectDescription;
+        nameText.text = name;
+        descriptionText.text = description;
+    }
+
+    public void HideInfo()
+    {
+        panel.SetActive(false);
     }
 }
