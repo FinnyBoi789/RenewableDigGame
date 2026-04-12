@@ -3,6 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+
 public class ScannerController : MonoBehaviour
 {
     public XRRayInteractor rayInteractor;
@@ -18,6 +19,7 @@ public class ScannerController : MonoBehaviour
     void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
+        Debug.Log("grabInteractable: " + grabInteractable, gameObject);
 
         grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnRelease);
@@ -58,7 +60,14 @@ public class ScannerController : MonoBehaviour
         if (GameManager.Instance.CurrentState == GameState.HasScanner)
         {
             GameManager.Instance.SetState(GameState.FirstScanDone);
-            DialogueManager.Instance.PlaySequence(firstScanDialogue);
+            if (GameManager.Instance.CurrentState == GameState.FirstScanDone)
+            {
+                DialogueManager.Instance.PlaySequence(firstScanDialogue);
+                Debug.Log("Current State: " + GameManager.Instance.CurrentState);
+            } else
+            {
+                return;
+            }
         }
     }
 }

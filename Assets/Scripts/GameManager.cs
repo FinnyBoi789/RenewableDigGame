@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameState CurrentState { get; private set; } = GameState.Crashed;
 
     [SerializeField] private DialogueSequenceData crashDialogue;
+    [SerializeField] private ProgressScreen progressMenu;
+
 
     void Awake() => Instance = this;
 
@@ -27,10 +29,23 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         DialogueManager.Instance.PlaySequence(crashDialogue);
+
     }
 
+
+    //Also handles updating the progress screen
     public void SetState(GameState newState)
     {
         CurrentState = newState;
+
+        switch (newState)
+    {
+        case GameState.HasScanner:
+            progressMenu.AddEntry("✓ Found the scanner");
+            break;
+        case GameState.FirstScanDone:
+            progressMenu.AddEntry("✓ Scanned first object");
+            break;
+    }
     }
 }
