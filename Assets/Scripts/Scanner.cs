@@ -7,30 +7,85 @@ public class Scanner : MonoBehaviour
     [SerializeField] XRRayInteractor rayInteractor;
     [SerializeField] InputActionProperty triggerAction;
     [SerializeField] UIManager uiManager;
+    [SerializeField] IndexScreen indexScreen;
+
+    float loseTargetTimer = 0f;
+    float loseTargetDelay = 0.2f;
+
+    Scannable currentTarget;
 
     void Update()
     {
-        if (triggerAction.action.WasPressedThisFrame())
-            TryScan();
-    }
-
-    void TryScan()
-    {
-        if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+        if (triggerAction.action.IsPressed())
         {
-            Scannable scannable = hit.collider.GetComponent<Scannable>();
-            if (scannable != null)
+            if (Scan())
             {
-                uiManager.ShowInfo(scannable.objectName, scannable.objectDescription);
+                loseTargetTimer = 0f;
             }
             else
             {
-                uiManager.HideInfo(); // hit something, but it's not scannable
+                loseTargetTimer += Time.deltaTime;
+
+                if (loseTargetTimer >= loseTargetDelay)
+                    ResetScan();
             }
         }
         else
         {
-            uiManager.HideInfo();
+            ResetScan();
+        }        
+    }
+
+    bool Scan()
+    {
+        if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+        {
+            Scannable scannable = hit.collider.GetComponentInParent<Scannable>();
+
+            if (scannable != null)
+            {
+                if (currentTarget != scannable)
+                {
+                    ResetScan();
+                    currentTarget = scannable;
+                }
+
+                if (!scannable.isScanned)
+                {
+                    scannable.currentScan += Time.deltaTime;
+
+                    float percent = scannable.currentScan / scannable.scanDuration;
+                    uiManager.ShowScanProgress(percent);
+
+                    if (percent >= 1f)
+                    {
+                        scannable.isScanned = true;
+                        uiManager.ShowInfo(scannable.objectName, scannable.objectDescription);
+    
+                        if (!scannable.isLogged)
+                        {
+                            indexScreen.AddEntry(scannable.objectName + ": " + scannable.objectDescription);
+                            scannable.isLogged = true;
+                        }
+                    }
+                }
+                else
+                {
+                    uiManager.ShowInfo(scannable.objectName, scannable.objectDescription);
+                }
+                return true;
+            }
+           
         }
+
+        ResetScan();
+        return false;
+    }
+
+    void ResetScan()
+    {
+        currentTarget = null;
+        uiManager.HideInfo();
+        uiManager.HideProgress();
     }
 }

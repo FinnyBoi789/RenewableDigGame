@@ -6,21 +6,37 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
-
-    [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject infoPanel;
+    [SerializeField] private GameObject scanPanel;
     [SerializeField] private TMPro.TextMeshProUGUI nameText;
     [SerializeField] private TMPro.TextMeshProUGUI descriptionText;
+    [SerializeField] private Slider scanProgressSlider;
+
     public void ShowInfo(string name, string description)
     {
-        panel.SetActive(true);
+        infoPanel.SetActive(true);
+        scanPanel.SetActive(false);
         nameText.text = name;
         descriptionText.text = description;
     }
 
     public void HideInfo()
     {
-        panel.SetActive(false);
+        infoPanel.SetActive(false);
+    }
+
+    public void ShowScanProgress(float percent)
+    {
+        scanPanel.SetActive(true);
+        infoPanel.SetActive(false);
+        scanProgressSlider.value = percent;
+    }
+
+    public void HideProgress()
+    {
+        scanPanel.SetActive(false);
     }
 }
