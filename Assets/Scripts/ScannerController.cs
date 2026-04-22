@@ -30,6 +30,11 @@ public class ScannerController : MonoBehaviour
 
     void OnGrab(SelectEnterEventArgs args)
     {
+        if(args.interactorObject is XRSocketInteractor)
+        {
+            return; // Ignore socket interactions
+        }   
+
         isHeld = true;
         if (GameManager.Instance.CurrentState == GameState.Crashed)
         {
@@ -40,6 +45,11 @@ public class ScannerController : MonoBehaviour
 
     void OnRelease(SelectExitEventArgs args)
     {
+        if(args.interactorObject is XRSocketInteractor)
+        {
+            return; // Ignore socket interactions
+        }
+        
         isHeld = false;
         rayInteractor.enabled = false;
         uiManager.HideInfo();

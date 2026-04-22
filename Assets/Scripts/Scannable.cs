@@ -12,4 +12,5 @@ public class Scannable : MonoBehaviour
     [HideInInspector] public float currentScan = 0f;
     [HideInInspector] public bool isScanned = false;
     [HideInInspector] public bool isLogged = false;
+
 }

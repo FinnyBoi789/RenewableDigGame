@@ -3,6 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class DialogueLine
 {
-    [TextArea] public string text;
-    public float displayDuration = 4f;
+    public AudioClip clip;
+    public float delayAfter = 0.5f;
 }

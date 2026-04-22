@@ -66,6 +66,12 @@ public class Scanner : MonoBehaviour
                         {
                             indexScreen.AddEntry(scannable.objectName + ": " + scannable.objectDescription);
                             scannable.isLogged = true;
+                            GameManager.Instance.LogScannedObject();
+
+                            if (GameManager.Instance.CurrentState == GameState.HasScanner)
+                            {
+                                GameManager.Instance.SetState(GameState.FirstScanDone);
+                            }
                         }
                     }
                 }

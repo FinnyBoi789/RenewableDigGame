@@ -6,14 +6,13 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
-    [SerializeField] private DialogueUIController dialogueUIController;
+    [SerializeField] private AudioSource audioSource;
     
     private bool isPlaying = false;
 
     void Awake()
     {
         Instance = this;
-        Debug.Log("DialogueManager awake, UI: " + dialogueUIController);
     }
 
     public void PlaySequence(DialogueSequenceData sequence)
@@ -24,17 +23,23 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void StopDialogue()
+    {
+        StopAllCoroutines();
+        audioSource.Stop();
+        isPlaying = false;
+    }
+
     private IEnumerator RunSequence(DialogueSequenceData sequence)
     {
         isPlaying = true;
 
         foreach(DialogueLine line in sequence.lines)
         {
-            dialogueUIController.ShowLine(line.text);
-            yield return new WaitForSeconds(line.displayDuration);
+            audioSource.clip = line.clip;
+            audioSource.Play();
+            yield return new WaitForSeconds(line.clip.length + line.delayAfter);
         }
-
-        dialogueUIController.Hide();
         isPlaying = false;
     }
 }
