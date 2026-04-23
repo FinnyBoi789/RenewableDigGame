@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Scanner
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequenceData
   lines:
-  - text: What is this thing again? there is a trigger button on it...
-    displayDuration: 6
-  - text: What if I point it at something...
-    displayDuration: 6
+  - clip: {fileID: 8300000, guid: dd1425969fbc8c340abe684374a7ffd0, type: 3}
+    delayAfter: 0.5

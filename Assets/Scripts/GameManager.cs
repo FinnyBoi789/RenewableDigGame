@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.IO.Enumeration;
+using System.Runtime.Serialization;
 
 public enum GameState
 {
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private WaypointIndicator waypointIndicator;
     [SerializeField] private GameObject waypoint;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dopamineAudioClip;
 
     public void LogScannedObject()
     {
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
             DialogueManager.Instance.PlaySequence(firstScanDone);
             break;
         case GameState.ScannedEnvironment:
+            audioSource.PlayOneShot(dopamineAudioClip);
             progressMenu.AddEntry("✓ Scanned the environment");
             waypoint.SetActive(true);
             waypointIndicator.SetTarget(waypoint.transform);

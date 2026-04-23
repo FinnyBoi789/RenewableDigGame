@@ -2,11 +2,21 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.InputSystem;
+
+public enum ScannerMode
+    {
+        Scan,
+        Mine
+    }
+
+public class ScannerController : MonoBehaviour{
 
 
-public class ScannerController : MonoBehaviour
-{
+    public ScannerMode CurrentMode { get; private set; } = ScannerMode.Scan;
     public XRRayInteractor rayInteractor;
+
+    [SerializeField] private InputActionProperty modeToggleAction;
 
     XRGrabInteractable grabInteractable;
 
@@ -15,9 +25,12 @@ public class ScannerController : MonoBehaviour
     [SerializeField] private DialogueSequenceData scannerDialogue;
     [SerializeField] private DialogueSequenceData firstScanDialogue;
     bool isHeld;
+    public bool hasTurbine = false;
 
     void Awake()
     {
+        modeToggleAction.action.Enable();
+        
         grabInteractable = GetComponent<XRGrabInteractable>();
         Debug.Log("grabInteractable: " + grabInteractable, gameObject);
 
@@ -26,6 +39,31 @@ public class ScannerController : MonoBehaviour
 
         grabInteractable.activated.AddListener(OnActivated);
         grabInteractable.deactivated.AddListener(OnDeactivated);
+
+        modeToggleAction.action.performed += OnModeToggle;
+    }
+
+    void OnModeToggle(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        Debug.Log("Mode toggle fired, isHeld: " + isHeld);
+        if (!isHeld) return;
+
+        if (CurrentMode == ScannerMode.Scan)
+        {
+            CurrentMode = ScannerMode.Mine;
+
+        }
+        else
+        {
+            CurrentMode = ScannerMode.Scan;
+        }
+        Debug.Log("Current Scanner Mode: " + CurrentMode);
+    }
+
+    void OnDestroy()
+    {
+        modeToggleAction.action.Disable();
+        modeToggleAction.action.performed -= OnModeToggle;
     }
 
     void OnGrab(SelectEnterEventArgs args)

@@ -13,12 +13,5 @@ MonoBehaviour:
   m_Name: Crashed
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequenceData
   lines:
-  - text: Oh no! It seems that the spaceship has crash landed on this planet!
-    displayDuration: 4
-  - text: If I remember correctly, I was supposed to land somewhere to find something...
-    displayDuration: 4
-  - text: But I cannot for the life of me remember where I was supposed to land or
-      what I was supposed to find...
-    displayDuration: 4
-  - text: I wonder if my scanner can help me at all...
-    displayDuration: 4
+  - clip: {fileID: 8300000, guid: 62f9698039ed91844aba2e5a8e608059, type: 3}
+    delayAfter: 0.5

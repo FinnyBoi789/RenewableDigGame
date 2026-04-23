@@ -13,12 +13,5 @@ MonoBehaviour:
   m_Name: FirstScan
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequenceData
   lines:
-  - text: Ooh! I'm starting to remember now!
-    displayDuration: 4
-  - text: The scanner displays all the necessary information on the object that you
-      point it at!
-    displayDuration: 4
-  - text: I still need to find out why I'm here though...
-    displayDuration: 4
-  - text: Let me see if the ship has any information...
-    displayDuration: 4
+  - clip: {fileID: 8300000, guid: d062b3dc4c6a4484a9b0bec0f5157b55, type: 3}
+    delayAfter: 0.5

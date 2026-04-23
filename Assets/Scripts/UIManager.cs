@@ -35,6 +35,13 @@ public class UIManager : MonoBehaviour
         scanProgressSlider.value = percent;
     }
 
+    public void ShowMineProgress(float percent)
+    {
+        scanPanel.SetActive(true);
+        infoPanel.SetActive(false);
+        scanProgressSlider.value = percent;
+    }
+
     public void HideProgress()
     {
         scanPanel.SetActive(false);
