@@ -9,6 +9,11 @@ public enum GameState
     HasScanner,
     FirstScanDone,
     ScannedEnvironment,
+    waypointTriggered,
+    pickedUpTurbine,
+    shipDug,
+    checkedSpaceship,
+    spaceshipFiredUp
 }
 
 public class GameManager : MonoBehaviour
@@ -34,6 +39,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueSequenceData scanner;
     [SerializeField] private DialogueSequenceData firstScanDone;
     [SerializeField] private DialogueSequenceData scannedEnvironment;
+    [SerializeField] private DialogueSequenceData waypointTriggered;
+    [SerializeField] private DialogueSequenceData pickedUpTurbine;
+    [SerializeField] private DialogueSequenceData shipDug;
+    [SerializeField] private DialogueSequenceData checkedSpaceship;
+    [SerializeField] private DialogueSequenceData spaceshipFiredUp;
     [SerializeField] private ProgressScreen progressMenu;
 
 
@@ -55,26 +65,44 @@ public class GameManager : MonoBehaviour
     //Also handles updating the progress screen
     public void SetState(GameState newState)
     {
+        if (CurrentState == newState) return;
+
         CurrentState = newState;
 
         DialogueManager.Instance.StopDialogue();
 
         switch (newState)
-    {
-        case GameState.HasScanner:
-            progressMenu.AddEntry("✓ Found the scanner");
-            DialogueManager.Instance.PlaySequence(scanner);
-            break;
-        case GameState.FirstScanDone:
-            progressMenu.AddEntry("✓ Scanned first object");
-            DialogueManager.Instance.PlaySequence(firstScanDone);
-            break;
-        case GameState.ScannedEnvironment:
-            audioSource.PlayOneShot(dopamineAudioClip);
-            progressMenu.AddEntry("✓ Scanned the environment");
-            waypoint.SetActive(true);
-            waypointIndicator.SetTarget(waypoint.transform);
-            break;
-    }
+        {
+            case GameState.HasScanner:
+                progressMenu.AddEntry("✓ Found the scanner");
+                DialogueManager.Instance.PlaySequence(scanner);
+                break;
+            case GameState.FirstScanDone:
+                progressMenu.AddEntry("✓ Scanned first object");
+                DialogueManager.Instance.PlaySequence(firstScanDone);
+                break;
+            case GameState.ScannedEnvironment:
+                audioSource.PlayOneShot(dopamineAudioClip);
+                progressMenu.AddEntry("✓ Scanned the environment");
+                waypoint.SetActive(true);
+                waypointIndicator.SetTarget(waypoint.transform);
+                DialogueManager.Instance.PlaySequence(scannedEnvironment);
+                break;
+            case GameState.waypointTriggered:
+                DialogueManager.Instance.PlaySequence(waypointTriggered);
+                break;
+            case GameState.pickedUpTurbine:
+                DialogueManager.Instance.PlaySequence(pickedUpTurbine);
+                break;
+            case GameState.shipDug:
+                DialogueManager.Instance.PlaySequence(shipDug);
+                break;
+            case GameState.checkedSpaceship:
+                DialogueManager.Instance.PlaySequence(checkedSpaceship);
+                break;
+            case GameState.spaceshipFiredUp:
+                DialogueManager.Instance.PlaySequence(spaceshipFiredUp);
+                break;
+        }
     }
 }

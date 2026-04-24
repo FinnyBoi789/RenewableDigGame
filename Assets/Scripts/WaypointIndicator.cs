@@ -16,7 +16,7 @@ public class WaypointIndicator : MonoBehaviour
         if (direction != Vector3.zero)
         {
             float angle = Vector3.SignedAngle(playerCamera.forward, direction, Vector3.up);
-            arrow.localRotation = Quaternion.Euler(0, angle, 0);
+            arrow.localRotation = Quaternion.Euler(0, angle, 90);
         }
     }
 

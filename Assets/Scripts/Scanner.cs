@@ -13,7 +13,7 @@ enum ScanResult
 public class Scanner : MonoBehaviour
 {
     [SerializeField] XRRayInteractor rayInteractor;
-    [SerializeField] InputActionProperty triggerAction;
+    [SerializeField] public InputActionProperty triggerAction;
     [SerializeField] UIManager uiManager;
     [SerializeField] IndexScreen indexScreen;
     [SerializeField] AudioSource scannerAudioSource;
@@ -227,11 +227,18 @@ public class Scanner : MonoBehaviour
         float elapsed = 0f;
         Vector3 originalScale = obj.transform.localScale;
 
+        Mineable mineableObj = obj.GetComponent<Mineable>();
+
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             obj.transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, elapsed / duration);
             yield return null;
+        }
+
+        if (notMineable != null && mineableObj.isSpaceship)
+        {
+            GameManager.Instance.SetState(GameState.shipDug);
         }
         Destroy(obj);
     }
