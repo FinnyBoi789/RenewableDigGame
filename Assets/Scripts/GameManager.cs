@@ -29,10 +29,15 @@ public class GameManager : MonoBehaviour
     private bool solarPhaseActive = false;
     private bool solarUnlocked = false;
 
-    [SerializeField] private WaypointIndicator waypointIndicator;
     [SerializeField] private GameObject waypoint;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip dopamineAudioClip;
+
+
+    [SerializeField] private AudioSource spaceShipAudioSource;
+    [SerializeField] private AudioClip spaceshipStartUpFail;
+    [SerializeField] private AudioClip spaceshipStartUpSuccess;
+
 
     [SerializeField] private DialogueSequenceData crashDialogue;
     [SerializeField] private DialogueSequenceData scanner;
@@ -43,16 +48,72 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueSequenceData shipDug;
     [SerializeField] private DialogueSequenceData checkedSpaceship;
     [SerializeField] private DialogueSequenceData spaceshipFiredUp;
-    [SerializeField] private ProgressScreen progressMenu;
+
+    [SerializeField] private CanvasGroup fadeGroup;
+    [SerializeField] private float fadeDuration = 2f;
+
+    IEnumerator FadeToBlack()
+    {
+        float t = 0f;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            fadeGroup.alpha = t / fadeDuration;
+            yield return null;
+        }
+
+        fadeGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(15f);
+
+        Debug.Log("GAME COMPLETE");
+        Application.Quit();
+    }
 
     [SerializeField] private GameObject[] solarWaypoints;
 
+    int panelsAligned = 0;
+    [SerializeField] int totalPanels = 3;
+
+    public void PanelAligned()
+    {
+        panelsAligned++;
+        Debug.Log("Panels aligned: " + panelsAligned);
+
+        if (panelsAligned >= totalPanels)
+        {
+            SetState(GameState.spaceshipFiredUp);
+        }
+    }
+
+    int currentSolarIndex = 0;
     void ActivateSolarWaypoints()
     {
+        currentSolarIndex = 0;
+
         foreach (var wp in solarWaypoints)
         {
-            wp.SetActive(true);
-            
+            wp.SetActive(false);
+        }
+
+        Debug.Log("Activating solar waypoint: " + solarWaypoints[0].name);
+        Debug.Log("Active before: " + solarWaypoints[0].activeSelf);
+
+        solarWaypoints[0].SetActive(true);
+
+        Debug.Log("Active after: " + solarWaypoints[0].activeSelf);
+    }
+
+    public void AdvanceSolarWaypoint()
+    {
+        solarWaypoints[currentSolarIndex].SetActive(false);
+
+        currentSolarIndex++;
+
+        if (currentSolarIndex < solarWaypoints.Length)
+        {
+            solarWaypoints[currentSolarIndex].SetActive(true);
         }
     }
 
@@ -71,12 +132,20 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void RegisterSpaceship(AudioSource source)
+    {
+        spaceShipAudioSource = source;
+    }
+
     public void LogScan()
     {
         Debug.Log("LOGSCAN CALLED");
 
         ObjectsScanned++;
         Debug.Log("Objects scanned: " + ObjectsScanned);
+
+        Debug.Log("solarPhaseActive: " + solarPhaseActive);
+        Debug.Log("Solar count BEFORE: " + SolarObjectsScanned);
 
         if (ObjectsScanned >= TotalObjects && CurrentState < GameState.ScannedEnvironment)
         {
@@ -87,7 +156,7 @@ public class GameManager : MonoBehaviour
         if (solarPhaseActive && !solarUnlocked)
         {
             SolarObjectsScanned++;
-            Debug.Log("Solar scans: " + SolarObjectsScanned);
+            Debug.Log("Solar count AFTER: " + SolarObjectsScanned);
 
             if (SolarObjectsScanned >= SolarTotalObjects)
             {
@@ -106,23 +175,22 @@ public class GameManager : MonoBehaviour
 
         CurrentState = newState;
 
+        Debug.Log("STATE SET TO: " + newState);
+
         DialogueManager.Instance.StopDialogue();
+        
 
         switch (newState)
         {
             case GameState.HasScanner:
-                progressMenu.AddEntry("✓ Found the scanner");
                 DialogueManager.Instance.PlaySequence(scanner);
                 break;
             case GameState.FirstScanDone:
-                progressMenu.AddEntry("✓ Scanned first object");
                 DialogueManager.Instance.PlaySequence(firstScanDone);
                 break;
             case GameState.ScannedEnvironment:
                 audioSource.PlayOneShot(dopamineAudioClip);
-                progressMenu.AddEntry("✓ Scanned the environment");
                 waypoint.SetActive(true);
-                waypointIndicator.SetTarget(waypoint.transform);
                 DialogueManager.Instance.PlaySequence(scannedEnvironment);
                 break;
             case GameState.waypointTriggered:
@@ -135,13 +203,26 @@ public class GameManager : MonoBehaviour
                 DialogueManager.Instance.PlaySequence(shipDug);
                 break;
             case GameState.checkedSpaceship:
+                if (spaceShipAudioSource != null)
+                {
+                    spaceShipAudioSource.PlayOneShot(spaceshipStartUpFail);
+                }
+                else
+                {
+                    Debug.LogError("No AudioSource found on spaceship!");
+                }
                 DialogueManager.Instance.PlaySequence(checkedSpaceship);
                 solarPhaseActive = true;
                 SolarObjectsScanned = 0;
                 Debug.Log("Solar Phase Started");
                 break;
             case GameState.spaceshipFiredUp:
+                if (spaceShipAudioSource != null)
+                {
+                    spaceShipAudioSource.PlayOneShot(spaceshipStartUpSuccess);
+                }
                 DialogueManager.Instance.PlaySequence(spaceshipFiredUp);
+                StartCoroutine(FadeToBlack());
                 break;
         }
     }

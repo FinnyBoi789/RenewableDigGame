@@ -11,17 +11,24 @@ public class WaypointTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            waypointIndicator.gameObject.SetActive(false);
-            waypointCanvas.gameObject.SetActive(false);
+        {   
+            if (waypointAudio != null && waypointAudio.gameObject.activeInHierarchy)
+            {
+                waypointAudio.PlayOneShot(waypoint);
+            }
+            
+            gameObject.SetActive(false);
+
             if (turbineWaypoint)
             {
-                GameManager.Instance.SetState(GameState.waypointTriggered);    
+                GameManager.Instance.SetState(GameState.waypointTriggered);
+            }
+            else
+            {
+                GameManager.Instance.AdvanceSolarWaypoint();
             }
 
-            waypointAudio.PlayOneShot(waypoint);
-            
-            // other things go here later
+
         }
     }
 }

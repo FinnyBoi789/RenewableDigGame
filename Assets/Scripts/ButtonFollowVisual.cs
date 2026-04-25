@@ -19,7 +19,7 @@ public class ButtonFollowVisual : MonoBehaviour
     private bool freeze = false;
 
     bool hasPressed = false;
-    public float pressThreshold = -0.02f;
+    [SerializeField] float pressDepth = 0.02f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -75,27 +75,37 @@ public class ButtonFollowVisual : MonoBehaviour
         if (freeze)
             return;
 
+        // --- Movement ---
         if (isFollowing)
         {
             Vector3 localTargetPosition = visualTarget.InverseTransformPoint(pokeAttachTransform.position + offset);
             Vector3 constrainedLocalTargetPosition = Vector3.Project(localTargetPosition, localAxis);
             visualTarget.position = visualTarget.TransformPoint(constrainedLocalTargetPosition);
-
-            if (!hasPressed && visualTarget.localPosition.y < pressThreshold)
-            {
-                hasPressed = true;
-                Debug.Log("BUTTON PRESSED");
-                GameManager.Instance.SetState(GameState.checkedSpaceship);
-            }
         }
         else
         {
-            visualTarget.localPosition = Vector3.Lerp(visualTarget.localPosition, initialLocalPos, Time.deltaTime * resetSpeed);
+            visualTarget.localPosition = Vector3.Lerp(
+                visualTarget.localPosition,
+                initialLocalPos,
+                Time.deltaTime * resetSpeed
+            );
+        }
 
-            if (visualTarget.localPosition.y >= pressThreshold)
-            {
-                hasPressed = false;
-            }
+        // --- Press logic ---
+        float pressPoint = initialLocalPos.y - pressDepth;
+        float releasePoint = initialLocalPos.y - (pressDepth * 0.5f);
+
+        if (!hasPressed && visualTarget.localPosition.y < pressPoint)
+        {
+            hasPressed = true;
+            Debug.Log("BUTTON PRESSED");
+            GameManager.Instance.SetState(GameState.checkedSpaceship);
+        }
+
+        // --- Release logic ---
+        if (hasPressed && visualTarget.localPosition.y > releasePoint)
+        {
+            hasPressed = false;
         }
     }
 }

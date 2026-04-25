@@ -14,7 +14,7 @@ extern void Event_get_delta_m1BBF28E2FC379EDD3907DC987E6BD7E6521D69A0 (void);
 extern void Event_set_delta_mA4F7805B9B53B36C7DAA31735CC9097D363B9F9A (void);
 extern void Event_get_pointerType_mFFB3FB3E83412151A66FEC136FA00EBDB563B94B (void);
 extern void Event_get_button_m57F81B5CCB26866E776D0EBD1250C708A3565C08 (void);
-extern void Event_get_modifiers_mD55E7CF06EB720434F0F174EA569B2A29792D39B (void);
+extern void Event_get_modifiers_m828B3E2EDBC78305FAC111D0938EF69EE34C820F (void);
 extern void Event_get_pressure_m3E43BF333499DFDCFF2A36258BBC290DDD40D963 (void);
 extern void Event_get_twist_m557A5139AD77A15D25598A3F83676E558D1202BF (void);
 extern void Event_get_tilt_m5F37D44342F42D691336B23EB075171CFEE7C7A3 (void);
@@ -67,7 +67,7 @@ extern void Event_get_delta_Injected_m4EEDB796FAFA905815EB8F89C200A8B851314B66 (
 extern void Event_set_delta_Injected_mD97744D7B81368BBBB63E68934C41B41344E4068 (void);
 extern void Event_get_pointerType_Injected_mB28B092716FE76712BF2640B11C4779884AAC9DB (void);
 extern void Event_get_button_Injected_mBB57C0D585B25CB1CD2D3253105FD86B3067A561 (void);
-extern void Event_get_modifiers_Injected_mEBCDDF68E5FFB407E12D3EE4AFFF1B88CE808004 (void);
+extern void Event_get_modifiers_Injected_m399BB048E9CD7D8F9C4451B0F49A6084A6D6258D (void);
 extern void Event_get_pressure_Injected_m0BB21470B6093D69CC81B5DF0B0A42B9EF5E5F9A (void);
 extern void Event_get_twist_Injected_m602DD5ADC6CEA12B0D0E4D3B70645EE87791F19F (void);
 extern void Event_get_tilt_Injected_m0AEEC6BF7F7868238FD5269EC6E8DDD3251DEE67 (void);
@@ -347,9 +347,7 @@ extern void GUIUtility_SetKeyboardControlToLastControlId_mB7A3C208ADDF009FB9C3C5
 extern void GUIUtility_HasFocusableControls_mE149711C5695D4DB44940D8073487992F1ACB883 (void);
 extern void GUIUtility_OwnsId_m46FE01F2CEF3A94173A1DB64A888E4DB1EBC74D2 (void);
 extern void GUIUtility_AlignRectToDevice_mE651D8C8024AD7FF9C1773FA000A2626BC263B8C (void);
-extern void GUIUtility_get_compositionString_mE06412C5CE41311C00BFC4028716D5F03EDD85E9 (void);
 extern void GUIUtility_set_imeCompositionMode_mE5C0A2391D65DAC056B1752D78B5A832DCB314C7 (void);
-extern void GUIUtility_set_compositionCursorPos_mECE1139A5660FFE152382DAB2DDBFADB96BB9644 (void);
 extern void GUIUtility_Internal_GetHotControl_m8230315B3FECDB164C84AFC40C180C2C7B319892 (void);
 extern void GUIUtility_Internal_GetKeyboardControl_mD0783552D4ACDA842F86F126C7A48ADC79340AB8 (void);
 extern void GUIUtility_Internal_SetHotControl_m56F3F333B107EFD83C7F3D703DDA48C5A19BFCB8 (void);
@@ -393,8 +391,6 @@ extern void GUIUtility_BeginContainerFromOwner_Injected_m9A05421D661AB304DCB90FB
 extern void GUIUtility_BeginContainer_Injected_mCA3B5274BBA81F16852B01CF4DFCE96840071420 (void);
 extern void GUIUtility_CheckForTabEvent_Injected_m24C24CF2AB79C28490AD2B64407C5903D4DDC76B (void);
 extern void GUIUtility_AlignRectToDevice_Injected_mED42E3383D2A790E76602A5AB894DDE4850E43F1 (void);
-extern void GUIUtility_get_compositionString_Injected_m0EDBBEEAC7AAFA15E3C7C9C4CCB624F120679FD3 (void);
-extern void GUIUtility_set_compositionCursorPos_Injected_mF035733A0EF9A0258AB44982286A8FFFBF2B09A6 (void);
 extern void ExitGUIException__ctor_m345D7AD70E401C1AFD46E537CDCEC0F1C8BA342B (void);
 extern void IMGUITextHandle_EmptyManagedCache_mAC1ACA3F16AF5B1E61236E71BDAD88A2DA3570FB (void);
 extern void IMGUITextHandle_GetTextHandle_m6B91EF10F51F622EF4D4572D737FE6CDCA30C4D3 (void);
@@ -459,54 +455,6 @@ extern void RuntimeTextSettings_SetStaticFallbackOSFontAsset_m265BF39CFD9DC3E893
 extern void RuntimeTextSettings__ctor_m71FB8625BA344A10F14506252F7F6EBF3DB78676 (void);
 extern void ScrollViewState__ctor_m9619262C4C72300A8B26011F627C68DF67425E53 (void);
 extern void SliderState__ctor_m650A11534C71EF571FD631CC3E910B756A16889E (void);
-extern void TextEditingUtilities_get_hasSelection_mB7272F47E994E6B88A2B0229BED793D4C5B23219 (void);
-extern void TextEditingUtilities_set_revealCursor_m76B8081758CCD459072EAEF3B8FE3017A57735C2 (void);
-extern void TextEditingUtilities_get_stringCursorIndex_m0A921BBC3646F59E7A99BEA8157166603748EA8E (void);
-extern void TextEditingUtilities_get_cursorIndex_m0D23C8510F3F2A20BBF5796F00CC36DA8BB32BD9 (void);
-extern void TextEditingUtilities_set_cursorIndex_mED289FA84CA33C4A695463C856524B501A78FEF4 (void);
-extern void TextEditingUtilities_get_cursorIndexNoValidation_mDBE41EB8F520D35613CBE19F58C8DD772A29B76D (void);
-extern void TextEditingUtilities_set_cursorIndexNoValidation_m905F2A16C7C97532B6DB66CC7A406D80820C9AD1 (void);
-extern void TextEditingUtilities_set_selectIndexNoValidation_mABFB9F721CD2316AEDF619FA4E9F28D22EB64FD2 (void);
-extern void TextEditingUtilities_get_stringSelectIndex_m19395861C05FC86D5765555A627E5C4D96BE4D2F (void);
-extern void TextEditingUtilities_get_selectIndex_m1331CF40E64C203B1713CFC2FEC5E0F30FFC737A (void);
-extern void TextEditingUtilities_set_selectIndex_mFB98D1E5E2C236DEEE7A45619965502B73E0ADBA (void);
-extern void TextEditingUtilities_get_text_mC8854D29B1F95E04E0FFB49F1F2327E77598EF8E (void);
-extern void TextEditingUtilities_set_text_mC1FD19476AF4FA014E9DBA5A33C54A57E2FA70EC (void);
-extern void TextEditingUtilities_SetTextWithoutNotify_m9EDB056450908DE504396BC41C057016806B4AE1 (void);
-extern void TextEditingUtilities__ctor_m6503B88727D1F4008C31E4FB54F2153A44E99B07 (void);
-extern void TextEditingUtilities_UpdateImeState_mC13FC46AB62C566576C0D653774896FFA438003B (void);
-extern void TextEditingUtilities_ShouldUpdateImeWindowPosition_m58FC98A57B608095F3EB6688A0D95FA64B8444E1 (void);
-extern void TextEditingUtilities_SetImeWindowPosition_m1DFAAA8DBA6A946B204470806FB968359BFB3C48 (void);
-extern void TextEditingUtilities_GeneratePreviewString_mA97B83DDA33F11F6580B86F6F2C438F19018A037 (void);
-extern void TextEditingUtilities_EnableCursorPreviewState_mD28C1FAC4AFFEE396D903D1EED90DF1F5BC6A85B (void);
-extern void TextEditingUtilities_RestoreCursorState_m36D71121DFD69D0EB43FCF48E49E1F616F9346C4 (void);
-extern void TextEditingUtilities_HandleKeyEvent_m03EBCCFF0BA24E0FC6E4EC8417F68041FE1F737B (void);
-extern void TextEditingUtilities_TextEditOpFromEnum_m1358EC90BECDC60C206400FD471D86C740F1CE83 (void);
-extern void TextEditingUtilities_PerformOperation_m8DC34D9795E11260FA9F4C4961601B189F342820 (void);
-extern void TextEditingUtilities_DeleteLineBack_m34769E8A0D70CE5BDBA3B11DA506BC7CA859CCFA (void);
-extern void TextEditingUtilities_DeleteWordBack_mC235A97BDFEE8CE4C993BCF02DF4E86AB4BB8F1D (void);
-extern void TextEditingUtilities_DeleteWordForward_m7A29C8E5BD4E3F01F7A379C16D971BBF565E5CAA (void);
-extern void TextEditingUtilities_Delete_mF34D04ACA64C871CDE0F5F5DD6CC36A0667926DD (void);
-extern void TextEditingUtilities_Backspace_m08DB317F2AEDA35F6227D52FF92B3EE4F7AA5909 (void);
-extern void TextEditingUtilities_DeleteSelection_mF7E0C7A8B7A8984A5DA2C55839BFE60E0A70B847 (void);
-extern void TextEditingUtilities_ReplaceSelection_m49F49CDB5D91B695392E2CE1B7BDC5A46817BBCE (void);
-extern void TextEditingUtilities_Insert_m74BE32F1C3044BE4A095E43FF6BF8D84150306F6 (void);
-extern void TextEditingUtilities_CanPaste_m81E3C512EF04804A3594020C3CD084F5BD85B3E7 (void);
-extern void TextEditingUtilities_Cut_m5E08F36BC2F88E0E55483A524E815A3EAA429D2B (void);
-extern void TextEditingUtilities_Paste_m876D2AD7A881EAC57D762E15F9ACB1AC26B3C28C (void);
-extern void TextEditingUtilities_ReplaceNewlinesWithSpaces_m368B355EF98969A0A9E527D67C43E173B3FCAC74 (void);
-extern void TextEditingUtilities_OnBlur_mCD1823DED60BE96C25C0E31B8DEC5F8EB1ACFD13 (void);
-extern void TextEditingUtilities_TouchScreenKeyboardShouldBeUsed_mAF399D5C01CD9A7B7F4E1C188792420AFBA99D53 (void);
-extern void TextEditingUtilities__cctor_mAA68E6F899BA708EDDCECADB251FAD2923BF80EF (void);
-extern void KeyEvent__ctor_m6CE8FDC8F0AFC375BECB2197E79948C1799FCD03 (void);
-extern void KeyEvent_get_key_mEACBCC58166C5020968ADE58DC8E7968715AC76B (void);
-extern void KeyEvent_get_modifiers_m02F790682E61B3B3C807838052666EFD8549AB14 (void);
-extern void KeyEvent_ToString_m293CEADFA29FF9F716C952B1D8E28A36BD7F91AC (void);
-extern void KeyEvent_PrintMembers_m2DD6B74091896314A02AF11DCE9D8B8CF12C2498 (void);
-extern void KeyEvent_op_Equality_m19A71907087D9A47732086F8CFE5A893613D072B (void);
-extern void KeyEvent_GetHashCode_mDE5A22EB82A6342542725EAB1562A8203CC19E2E (void);
-extern void KeyEvent_Equals_mB05F54FE4F3594FF94E97D60C70F9810B34B474D (void);
-extern void KeyEvent_Equals_mD7CB565C1F082A24F37743EBCBAFEA318E99102A (void);
 extern void TextEditor_get_showCursor_m2A6C5BACAAC0FEC2985858F08839D34B5A296AFA (void);
 extern void TextEditor_get_text_mB5A19231EF7159855775CF3E9C5BC5346156E168 (void);
 extern void TextEditor_set_text_mB71257AAD99A56AD5EA96DB546B17296E60C4455 (void);
@@ -520,83 +468,7 @@ extern void TextEditor_UpdateTextHandle_m2AC449E0917F90F2D9F0EABDDA1C89DEE98F707
 extern void TextEditor_UpdateScrollOffset_mD3F056830FF3FFC3461ED965EB0B7E306536FC3B (void);
 extern void TextEditor_OnCursorIndexChange_m9B9C472B0F62917E96E5E27F15A76C9E4E493012 (void);
 extern void TextEditor_OnSelectIndexChange_m99E1BBDFC6398F47F3170A6A46C5428F292FEE21 (void);
-extern void TextSelectingUtilities_get_hasSelection_m86EA37D0A10EC2C4C1886C7E770DAB34DB8A66CD (void);
-extern void TextSelectingUtilities_get_revealCursor_mD9502AE79AB9AC44496008153F267CBB4A9B3C16 (void);
-extern void TextSelectingUtilities_set_revealCursor_m2A3BFE850A09B0716824E763373A521A24CC5F52 (void);
-extern void TextSelectingUtilities_get_m_CharacterCount_m4C9189574E900CF75E41BB29861246D64A83CB0E (void);
-extern void TextSelectingUtilities_get_characterCount_mF1A48644B9D24C0AE96B6259FDAFC87CB1BD5FEB (void);
-extern void TextSelectingUtilities_get_m_TextElementInfos_mB87B7D1C40D71249B4E20DA1D7501194A2477368 (void);
-extern void TextSelectingUtilities_get_cursorIndex_m89386F5B913CD481337E49A0635834F433B4AC5F (void);
-extern void TextSelectingUtilities_set_cursorIndex_m0D3D5D519DA459906E983EABAA4AF692C4763269 (void);
-extern void TextSelectingUtilities_get_cursorIndexNoValidation_mA6143409C53305FB602A73CDEC6EB201E2763ED9 (void);
-extern void TextSelectingUtilities_set_cursorIndexNoValidation_mB590BB148DA02766188234EE77321EB51D4FACA9 (void);
-extern void TextSelectingUtilities_SetCursorIndexWithoutNotify_mF240906A6FA8A38F5CB6AD1C5601265D05CCCAEE (void);
-extern void TextSelectingUtilities_get_selectIndex_m1535CA4D982CC3A4C46E4491FA36E9514243CCB9 (void);
-extern void TextSelectingUtilities_set_selectIndex_m1697EFBA1D0B91E0B20FD23B69A43D32D2110F10 (void);
-extern void TextSelectingUtilities_set_selectIndexNoValidation_mD676910A3F674119D5C43EC8B47C6D5528862062 (void);
-extern void TextSelectingUtilities_SetSelectIndexWithoutNotify_m33DB6522D2FA6877E3B991CDFD4944836A5D77FF (void);
-extern void TextSelectingUtilities_get_selectedText_m4A131331842BA17B453A09FE4663A75B7B356013 (void);
-extern void TextSelectingUtilities__ctor_m0D593E63B3CFE982829CFF9C93C5858E27AB84AE (void);
-extern void TextSelectingUtilities_HandleKeyEvent_m01288508B66190F5599DF58C706B9C476BA79814 (void);
-extern void TextSelectingUtilities_PerformOperation_m3F865D868A3A9264B28FAABBFE92F654BF3706FC (void);
-extern void TextSelectingUtilities_TextSelectOpFromEnum_mBDC5B5B15DC2902B56AA0E766B2F9DBB5B4E1DEA (void);
-extern void TextSelectingUtilities_ClearCursorPos_m743C82F3CC7576E5050B6FA23133EC3FA8E9ED9C (void);
-extern void TextSelectingUtilities_OnFocus_mCAC979E4683D3A0B91C91FCC19516E5FEE605A9C (void);
-extern void TextSelectingUtilities_SelectAll_m89B71F5AF97AC5848616468DEFCF062C26DF23FD (void);
-extern void TextSelectingUtilities_SelectNone_m47791B4FBE066CCC974155E1BD9FE8ACCB48D21A (void);
-extern void TextSelectingUtilities_SelectLeft_mB51FE46E45D1C077ACB44AC5E2BF63C52AC3727D (void);
-extern void TextSelectingUtilities_SelectRight_mFC95A2800C1CBEC7606EA8901F75CC946ED3BCA8 (void);
-extern void TextSelectingUtilities_SelectUp_m1D90105D04CF6CBAE84D059CEF0495FD2FF0C22A (void);
-extern void TextSelectingUtilities_SelectDown_m8E2EE5EC95CE507A7814D0FAAD865557C2A191C1 (void);
-extern void TextSelectingUtilities_SelectTextEnd_mFF22956A56670B41BEE1A4527A9057B63BE89927 (void);
-extern void TextSelectingUtilities_SelectTextStart_mD4F085F9AF7C2441D60E54CDE64B96A6934D13A6 (void);
-extern void TextSelectingUtilities_SelectToStartOfNextWord_mC53BBECD698C32BAD6B4856F52ACA9E9D59F3E52 (void);
-extern void TextSelectingUtilities_SelectToEndOfPreviousWord_mAC43A04CA459FE506650A86B695900300E4B24D8 (void);
-extern void TextSelectingUtilities_SelectWordRight_m75669B452A334F48FB1CE5E0AC6792862E706B5E (void);
-extern void TextSelectingUtilities_SelectWordLeft_mC488E7BBD9E8187F426A2F1CA82C528D76F4FCCC (void);
-extern void TextSelectingUtilities_SelectGraphicalLineStart_m87E74A85CBD46469B2D1263436D2BE2FE5ABDB38 (void);
-extern void TextSelectingUtilities_SelectGraphicalLineEnd_m60A6059D86AEB922ED7829EAF9C4E53B800911B4 (void);
-extern void TextSelectingUtilities_SelectParagraphForward_m64D82C33CE1B82DC1B994B6CA027D717AB4280EB (void);
-extern void TextSelectingUtilities_SelectParagraphBackward_m77EE0A0A167E91E1850937F543DBA615DC6DE0A0 (void);
-extern void TextSelectingUtilities_SelectCurrentWord_mCC2AC7DD6D2BA6D2DF3DD728D883FF0D6963A959 (void);
-extern void TextSelectingUtilities_SelectCurrentParagraph_mBD0B848A023ED86697EBA135E81B59ACD13B2B7A (void);
-extern void TextSelectingUtilities_MoveRight_m8F1910A2773A39EF5CE248349F5A6CD7166AB795 (void);
-extern void TextSelectingUtilities_MoveLeft_m094C534A56FC3CDA9C2423E46D179F359693370E (void);
-extern void TextSelectingUtilities_MoveUp_mF0F3EE17A2CB3C4C1AEB950E80A5237A55D2711D (void);
-extern void TextSelectingUtilities_MoveDown_m7EF798D6A19267DE30ED50C66697F5BC8AB814B8 (void);
-extern void TextSelectingUtilities_MoveLineStart_m561A829C19F6C50028473CD5F81C508F3EEFE276 (void);
-extern void TextSelectingUtilities_MoveLineEnd_mB4BABB86B094C9B88DEF94E0392BAE4396283B61 (void);
-extern void TextSelectingUtilities_MoveGraphicalLineStart_m1ECAAAF8A29D63C5D7E76170D3745E3EB9E2266F (void);
-extern void TextSelectingUtilities_MoveGraphicalLineEnd_m8BB408E28EA20EB56531B1FFD417FE54296008BE (void);
-extern void TextSelectingUtilities_MoveTextStart_m7A276F1B11A1DAF468AC84324E592005B5D47350 (void);
-extern void TextSelectingUtilities_MoveTextEnd_mDA69E553CA7D50781E845169852F1A0059FF0EB9 (void);
-extern void TextSelectingUtilities_MoveParagraphForward_m88210A22BC823945D6AA137D50603388233502EA (void);
-extern void TextSelectingUtilities_MoveParagraphBackward_m087604CE592162192829ADB142B786B0C436A58C (void);
-extern void TextSelectingUtilities_MoveWordRight_mDCDC1B673D599BB94C95D6DC364D8877E87E3383 (void);
-extern void TextSelectingUtilities_MoveToStartOfNextWord_mD1CEFD9620822349FDE09237943F943EB512A8C2 (void);
-extern void TextSelectingUtilities_MoveToEndOfPreviousWord_m5BE2565747FFC49AA41526504653159852FC50A7 (void);
-extern void TextSelectingUtilities_MoveWordLeft_m7D8131CD2DF2DF180D3FC249E2F0E17E250E5D3D (void);
-extern void TextSelectingUtilities_MouseDragSelectsWholeWords_mB586078A58B5D56A53138856AB8DE9BD33535CC1 (void);
-extern void TextSelectingUtilities_ExpandSelectGraphicalLineStart_m5E109D0A6A12D3D2FDF09F3E1407EB0347F7C4EF (void);
-extern void TextSelectingUtilities_ExpandSelectGraphicalLineEnd_mFCA738E71AADB3C1206F279BC2681CA906A36D74 (void);
-extern void TextSelectingUtilities_DblClickSnap_m6472F8DA3F0FC46FF75FFB394B283F5E5EC834FA (void);
-extern void TextSelectingUtilities_MoveCursorToPosition_Internal_mE4AEE1AA57B8CCBB371C24B4F4B1AA2FF89886FD (void);
-extern void TextSelectingUtilities_SelectToPosition_m75C9B53E1227CF9D487D5C8D771F0D8ACFEDC2F8 (void);
-extern void TextSelectingUtilities_FindNextSeperator_mCF332FBDFEA6BCB471EDF75D76A139A580DB0E2A (void);
-extern void TextSelectingUtilities_FindPrevSeperator_mD0F56A4106D376F28D6A0E8E07D7D4DAB9FF8C7E (void);
-extern void TextSelectingUtilities_FindStartOfNextWord_m3D436C6FB45B3574F6F436B7CBAD30F5372C6870 (void);
-extern void TextSelectingUtilities_FindEndOfPreviousWord_mA7AF965D2F01728EE872F2CB3F03083ABA63D174 (void);
-extern void TextSelectingUtilities_FindEndOfClassification_m134E7AB62A9E90595A3C6DCC1DD517515B85AB1A (void);
-extern void TextSelectingUtilities_ClampTextIndex_m04DED78B3B466D3E5AF59442F736A822ABC8D7E0 (void);
-extern void TextSelectingUtilities_IndexOfEndOfLine_m9D87F72DC289F7095E615D97D821BBCE8D2B978B (void);
-extern void TextSelectingUtilities_PreviousCodePointIndex_mCE1A8A7E9180B182AEA4DB6562EBDE854A860C6D (void);
-extern void TextSelectingUtilities_NextCodePointIndex_mA936059BE65DAABE0446AFB5425BB4EA83392607 (void);
-extern void TextSelectingUtilities_GetGraphicalLineStart_mEDB6AF99C1BBE0A1180AEE4FE67DDC0A223BD218 (void);
-extern void TextSelectingUtilities_GetGraphicalLineEnd_mD956DB2F4EC24F3DE89069232733376B615D3204 (void);
-extern void TextSelectingUtilities_Copy_m69701E12FFE465B70E677DCCCCF3148873A5FE0A (void);
-extern void TextSelectingUtilities_ClassifyChar_m887E3900015DB05F1EF0E5F4630748CCA5C3CD52 (void);
-extern void TextSelectingUtilities__cctor_m1BF3037C1F9E014A61439D68EC47233930273A76 (void);
-static Il2CppMethodPointer s_methodPointers[589] = 
+static Il2CppMethodPointer s_methodPointers[461] = 
 {
 	Event_get_rawType_mD7CD874F3C8DFD4DFB6237E79A7C3A484B33CE56,
 	Event_get_mousePosition_mD6D2DF45C75E6FADD415D27D0E93563DED37D9B9,
@@ -605,7 +477,7 @@ static Il2CppMethodPointer s_methodPointers[589] =
 	Event_set_delta_mA4F7805B9B53B36C7DAA31735CC9097D363B9F9A,
 	Event_get_pointerType_mFFB3FB3E83412151A66FEC136FA00EBDB563B94B,
 	Event_get_button_m57F81B5CCB26866E776D0EBD1250C708A3565C08,
-	Event_get_modifiers_mD55E7CF06EB720434F0F174EA569B2A29792D39B,
+	Event_get_modifiers_m828B3E2EDBC78305FAC111D0938EF69EE34C820F,
 	Event_get_pressure_m3E43BF333499DFDCFF2A36258BBC290DDD40D963,
 	Event_get_twist_m557A5139AD77A15D25598A3F83676E558D1202BF,
 	Event_get_tilt_m5F37D44342F42D691336B23EB075171CFEE7C7A3,
@@ -658,7 +530,7 @@ static Il2CppMethodPointer s_methodPointers[589] =
 	Event_set_delta_Injected_mD97744D7B81368BBBB63E68934C41B41344E4068,
 	Event_get_pointerType_Injected_mB28B092716FE76712BF2640B11C4779884AAC9DB,
 	Event_get_button_Injected_mBB57C0D585B25CB1CD2D3253105FD86B3067A561,
-	Event_get_modifiers_Injected_mEBCDDF68E5FFB407E12D3EE4AFFF1B88CE808004,
+	Event_get_modifiers_Injected_m399BB048E9CD7D8F9C4451B0F49A6084A6D6258D,
 	Event_get_pressure_Injected_m0BB21470B6093D69CC81B5DF0B0A42B9EF5E5F9A,
 	Event_get_twist_Injected_m602DD5ADC6CEA12B0D0E4D3B70645EE87791F19F,
 	Event_get_tilt_Injected_m0AEEC6BF7F7868238FD5269EC6E8DDD3251DEE67,
@@ -938,9 +810,7 @@ static Il2CppMethodPointer s_methodPointers[589] =
 	GUIUtility_HasFocusableControls_mE149711C5695D4DB44940D8073487992F1ACB883,
 	GUIUtility_OwnsId_m46FE01F2CEF3A94173A1DB64A888E4DB1EBC74D2,
 	GUIUtility_AlignRectToDevice_mE651D8C8024AD7FF9C1773FA000A2626BC263B8C,
-	GUIUtility_get_compositionString_mE06412C5CE41311C00BFC4028716D5F03EDD85E9,
 	GUIUtility_set_imeCompositionMode_mE5C0A2391D65DAC056B1752D78B5A832DCB314C7,
-	GUIUtility_set_compositionCursorPos_mECE1139A5660FFE152382DAB2DDBFADB96BB9644,
 	GUIUtility_Internal_GetHotControl_m8230315B3FECDB164C84AFC40C180C2C7B319892,
 	GUIUtility_Internal_GetKeyboardControl_mD0783552D4ACDA842F86F126C7A48ADC79340AB8,
 	GUIUtility_Internal_SetHotControl_m56F3F333B107EFD83C7F3D703DDA48C5A19BFCB8,
@@ -984,8 +854,6 @@ static Il2CppMethodPointer s_methodPointers[589] =
 	GUIUtility_BeginContainer_Injected_mCA3B5274BBA81F16852B01CF4DFCE96840071420,
 	GUIUtility_CheckForTabEvent_Injected_m24C24CF2AB79C28490AD2B64407C5903D4DDC76B,
 	GUIUtility_AlignRectToDevice_Injected_mED42E3383D2A790E76602A5AB894DDE4850E43F1,
-	GUIUtility_get_compositionString_Injected_m0EDBBEEAC7AAFA15E3C7C9C4CCB624F120679FD3,
-	GUIUtility_set_compositionCursorPos_Injected_mF035733A0EF9A0258AB44982286A8FFFBF2B09A6,
 	ExitGUIException__ctor_m345D7AD70E401C1AFD46E537CDCEC0F1C8BA342B,
 	IMGUITextHandle_EmptyManagedCache_mAC1ACA3F16AF5B1E61236E71BDAD88A2DA3570FB,
 	IMGUITextHandle_GetTextHandle_m6B91EF10F51F622EF4D4572D737FE6CDCA30C4D3,
@@ -1050,54 +918,6 @@ static Il2CppMethodPointer s_methodPointers[589] =
 	RuntimeTextSettings__ctor_m71FB8625BA344A10F14506252F7F6EBF3DB78676,
 	ScrollViewState__ctor_m9619262C4C72300A8B26011F627C68DF67425E53,
 	SliderState__ctor_m650A11534C71EF571FD631CC3E910B756A16889E,
-	TextEditingUtilities_get_hasSelection_mB7272F47E994E6B88A2B0229BED793D4C5B23219,
-	TextEditingUtilities_set_revealCursor_m76B8081758CCD459072EAEF3B8FE3017A57735C2,
-	TextEditingUtilities_get_stringCursorIndex_m0A921BBC3646F59E7A99BEA8157166603748EA8E,
-	TextEditingUtilities_get_cursorIndex_m0D23C8510F3F2A20BBF5796F00CC36DA8BB32BD9,
-	TextEditingUtilities_set_cursorIndex_mED289FA84CA33C4A695463C856524B501A78FEF4,
-	TextEditingUtilities_get_cursorIndexNoValidation_mDBE41EB8F520D35613CBE19F58C8DD772A29B76D,
-	TextEditingUtilities_set_cursorIndexNoValidation_m905F2A16C7C97532B6DB66CC7A406D80820C9AD1,
-	TextEditingUtilities_set_selectIndexNoValidation_mABFB9F721CD2316AEDF619FA4E9F28D22EB64FD2,
-	TextEditingUtilities_get_stringSelectIndex_m19395861C05FC86D5765555A627E5C4D96BE4D2F,
-	TextEditingUtilities_get_selectIndex_m1331CF40E64C203B1713CFC2FEC5E0F30FFC737A,
-	TextEditingUtilities_set_selectIndex_mFB98D1E5E2C236DEEE7A45619965502B73E0ADBA,
-	TextEditingUtilities_get_text_mC8854D29B1F95E04E0FFB49F1F2327E77598EF8E,
-	TextEditingUtilities_set_text_mC1FD19476AF4FA014E9DBA5A33C54A57E2FA70EC,
-	TextEditingUtilities_SetTextWithoutNotify_m9EDB056450908DE504396BC41C057016806B4AE1,
-	TextEditingUtilities__ctor_m6503B88727D1F4008C31E4FB54F2153A44E99B07,
-	TextEditingUtilities_UpdateImeState_mC13FC46AB62C566576C0D653774896FFA438003B,
-	TextEditingUtilities_ShouldUpdateImeWindowPosition_m58FC98A57B608095F3EB6688A0D95FA64B8444E1,
-	TextEditingUtilities_SetImeWindowPosition_m1DFAAA8DBA6A946B204470806FB968359BFB3C48,
-	TextEditingUtilities_GeneratePreviewString_mA97B83DDA33F11F6580B86F6F2C438F19018A037,
-	TextEditingUtilities_EnableCursorPreviewState_mD28C1FAC4AFFEE396D903D1EED90DF1F5BC6A85B,
-	TextEditingUtilities_RestoreCursorState_m36D71121DFD69D0EB43FCF48E49E1F616F9346C4,
-	TextEditingUtilities_HandleKeyEvent_m03EBCCFF0BA24E0FC6E4EC8417F68041FE1F737B,
-	TextEditingUtilities_TextEditOpFromEnum_m1358EC90BECDC60C206400FD471D86C740F1CE83,
-	TextEditingUtilities_PerformOperation_m8DC34D9795E11260FA9F4C4961601B189F342820,
-	TextEditingUtilities_DeleteLineBack_m34769E8A0D70CE5BDBA3B11DA506BC7CA859CCFA,
-	TextEditingUtilities_DeleteWordBack_mC235A97BDFEE8CE4C993BCF02DF4E86AB4BB8F1D,
-	TextEditingUtilities_DeleteWordForward_m7A29C8E5BD4E3F01F7A379C16D971BBF565E5CAA,
-	TextEditingUtilities_Delete_mF34D04ACA64C871CDE0F5F5DD6CC36A0667926DD,
-	TextEditingUtilities_Backspace_m08DB317F2AEDA35F6227D52FF92B3EE4F7AA5909,
-	TextEditingUtilities_DeleteSelection_mF7E0C7A8B7A8984A5DA2C55839BFE60E0A70B847,
-	TextEditingUtilities_ReplaceSelection_m49F49CDB5D91B695392E2CE1B7BDC5A46817BBCE,
-	TextEditingUtilities_Insert_m74BE32F1C3044BE4A095E43FF6BF8D84150306F6,
-	TextEditingUtilities_CanPaste_m81E3C512EF04804A3594020C3CD084F5BD85B3E7,
-	TextEditingUtilities_Cut_m5E08F36BC2F88E0E55483A524E815A3EAA429D2B,
-	TextEditingUtilities_Paste_m876D2AD7A881EAC57D762E15F9ACB1AC26B3C28C,
-	TextEditingUtilities_ReplaceNewlinesWithSpaces_m368B355EF98969A0A9E527D67C43E173B3FCAC74,
-	TextEditingUtilities_OnBlur_mCD1823DED60BE96C25C0E31B8DEC5F8EB1ACFD13,
-	TextEditingUtilities_TouchScreenKeyboardShouldBeUsed_mAF399D5C01CD9A7B7F4E1C188792420AFBA99D53,
-	TextEditingUtilities__cctor_mAA68E6F899BA708EDDCECADB251FAD2923BF80EF,
-	KeyEvent__ctor_m6CE8FDC8F0AFC375BECB2197E79948C1799FCD03,
-	KeyEvent_get_key_mEACBCC58166C5020968ADE58DC8E7968715AC76B,
-	KeyEvent_get_modifiers_m02F790682E61B3B3C807838052666EFD8549AB14,
-	KeyEvent_ToString_m293CEADFA29FF9F716C952B1D8E28A36BD7F91AC,
-	KeyEvent_PrintMembers_m2DD6B74091896314A02AF11DCE9D8B8CF12C2498,
-	KeyEvent_op_Equality_m19A71907087D9A47732086F8CFE5A893613D072B,
-	KeyEvent_GetHashCode_mDE5A22EB82A6342542725EAB1562A8203CC19E2E,
-	KeyEvent_Equals_mB05F54FE4F3594FF94E97D60C70F9810B34B474D,
-	KeyEvent_Equals_mD7CB565C1F082A24F37743EBCBAFEA318E99102A,
 	TextEditor_get_showCursor_m2A6C5BACAAC0FEC2985858F08839D34B5A296AFA,
 	TextEditor_get_text_mB5A19231EF7159855775CF3E9C5BC5346156E168,
 	TextEditor_set_text_mB71257AAD99A56AD5EA96DB546B17296E60C4455,
@@ -1111,82 +931,6 @@ static Il2CppMethodPointer s_methodPointers[589] =
 	TextEditor_UpdateScrollOffset_mD3F056830FF3FFC3461ED965EB0B7E306536FC3B,
 	TextEditor_OnCursorIndexChange_m9B9C472B0F62917E96E5E27F15A76C9E4E493012,
 	TextEditor_OnSelectIndexChange_m99E1BBDFC6398F47F3170A6A46C5428F292FEE21,
-	TextSelectingUtilities_get_hasSelection_m86EA37D0A10EC2C4C1886C7E770DAB34DB8A66CD,
-	TextSelectingUtilities_get_revealCursor_mD9502AE79AB9AC44496008153F267CBB4A9B3C16,
-	TextSelectingUtilities_set_revealCursor_m2A3BFE850A09B0716824E763373A521A24CC5F52,
-	TextSelectingUtilities_get_m_CharacterCount_m4C9189574E900CF75E41BB29861246D64A83CB0E,
-	TextSelectingUtilities_get_characterCount_mF1A48644B9D24C0AE96B6259FDAFC87CB1BD5FEB,
-	TextSelectingUtilities_get_m_TextElementInfos_mB87B7D1C40D71249B4E20DA1D7501194A2477368,
-	TextSelectingUtilities_get_cursorIndex_m89386F5B913CD481337E49A0635834F433B4AC5F,
-	TextSelectingUtilities_set_cursorIndex_m0D3D5D519DA459906E983EABAA4AF692C4763269,
-	TextSelectingUtilities_get_cursorIndexNoValidation_mA6143409C53305FB602A73CDEC6EB201E2763ED9,
-	TextSelectingUtilities_set_cursorIndexNoValidation_mB590BB148DA02766188234EE77321EB51D4FACA9,
-	TextSelectingUtilities_SetCursorIndexWithoutNotify_mF240906A6FA8A38F5CB6AD1C5601265D05CCCAEE,
-	TextSelectingUtilities_get_selectIndex_m1535CA4D982CC3A4C46E4491FA36E9514243CCB9,
-	TextSelectingUtilities_set_selectIndex_m1697EFBA1D0B91E0B20FD23B69A43D32D2110F10,
-	TextSelectingUtilities_set_selectIndexNoValidation_mD676910A3F674119D5C43EC8B47C6D5528862062,
-	TextSelectingUtilities_SetSelectIndexWithoutNotify_m33DB6522D2FA6877E3B991CDFD4944836A5D77FF,
-	TextSelectingUtilities_get_selectedText_m4A131331842BA17B453A09FE4663A75B7B356013,
-	TextSelectingUtilities__ctor_m0D593E63B3CFE982829CFF9C93C5858E27AB84AE,
-	TextSelectingUtilities_HandleKeyEvent_m01288508B66190F5599DF58C706B9C476BA79814,
-	TextSelectingUtilities_PerformOperation_m3F865D868A3A9264B28FAABBFE92F654BF3706FC,
-	TextSelectingUtilities_TextSelectOpFromEnum_mBDC5B5B15DC2902B56AA0E766B2F9DBB5B4E1DEA,
-	TextSelectingUtilities_ClearCursorPos_m743C82F3CC7576E5050B6FA23133EC3FA8E9ED9C,
-	TextSelectingUtilities_OnFocus_mCAC979E4683D3A0B91C91FCC19516E5FEE605A9C,
-	TextSelectingUtilities_SelectAll_m89B71F5AF97AC5848616468DEFCF062C26DF23FD,
-	TextSelectingUtilities_SelectNone_m47791B4FBE066CCC974155E1BD9FE8ACCB48D21A,
-	TextSelectingUtilities_SelectLeft_mB51FE46E45D1C077ACB44AC5E2BF63C52AC3727D,
-	TextSelectingUtilities_SelectRight_mFC95A2800C1CBEC7606EA8901F75CC946ED3BCA8,
-	TextSelectingUtilities_SelectUp_m1D90105D04CF6CBAE84D059CEF0495FD2FF0C22A,
-	TextSelectingUtilities_SelectDown_m8E2EE5EC95CE507A7814D0FAAD865557C2A191C1,
-	TextSelectingUtilities_SelectTextEnd_mFF22956A56670B41BEE1A4527A9057B63BE89927,
-	TextSelectingUtilities_SelectTextStart_mD4F085F9AF7C2441D60E54CDE64B96A6934D13A6,
-	TextSelectingUtilities_SelectToStartOfNextWord_mC53BBECD698C32BAD6B4856F52ACA9E9D59F3E52,
-	TextSelectingUtilities_SelectToEndOfPreviousWord_mAC43A04CA459FE506650A86B695900300E4B24D8,
-	TextSelectingUtilities_SelectWordRight_m75669B452A334F48FB1CE5E0AC6792862E706B5E,
-	TextSelectingUtilities_SelectWordLeft_mC488E7BBD9E8187F426A2F1CA82C528D76F4FCCC,
-	TextSelectingUtilities_SelectGraphicalLineStart_m87E74A85CBD46469B2D1263436D2BE2FE5ABDB38,
-	TextSelectingUtilities_SelectGraphicalLineEnd_m60A6059D86AEB922ED7829EAF9C4E53B800911B4,
-	TextSelectingUtilities_SelectParagraphForward_m64D82C33CE1B82DC1B994B6CA027D717AB4280EB,
-	TextSelectingUtilities_SelectParagraphBackward_m77EE0A0A167E91E1850937F543DBA615DC6DE0A0,
-	TextSelectingUtilities_SelectCurrentWord_mCC2AC7DD6D2BA6D2DF3DD728D883FF0D6963A959,
-	TextSelectingUtilities_SelectCurrentParagraph_mBD0B848A023ED86697EBA135E81B59ACD13B2B7A,
-	TextSelectingUtilities_MoveRight_m8F1910A2773A39EF5CE248349F5A6CD7166AB795,
-	TextSelectingUtilities_MoveLeft_m094C534A56FC3CDA9C2423E46D179F359693370E,
-	TextSelectingUtilities_MoveUp_mF0F3EE17A2CB3C4C1AEB950E80A5237A55D2711D,
-	TextSelectingUtilities_MoveDown_m7EF798D6A19267DE30ED50C66697F5BC8AB814B8,
-	TextSelectingUtilities_MoveLineStart_m561A829C19F6C50028473CD5F81C508F3EEFE276,
-	TextSelectingUtilities_MoveLineEnd_mB4BABB86B094C9B88DEF94E0392BAE4396283B61,
-	TextSelectingUtilities_MoveGraphicalLineStart_m1ECAAAF8A29D63C5D7E76170D3745E3EB9E2266F,
-	TextSelectingUtilities_MoveGraphicalLineEnd_m8BB408E28EA20EB56531B1FFD417FE54296008BE,
-	TextSelectingUtilities_MoveTextStart_m7A276F1B11A1DAF468AC84324E592005B5D47350,
-	TextSelectingUtilities_MoveTextEnd_mDA69E553CA7D50781E845169852F1A0059FF0EB9,
-	TextSelectingUtilities_MoveParagraphForward_m88210A22BC823945D6AA137D50603388233502EA,
-	TextSelectingUtilities_MoveParagraphBackward_m087604CE592162192829ADB142B786B0C436A58C,
-	TextSelectingUtilities_MoveWordRight_mDCDC1B673D599BB94C95D6DC364D8877E87E3383,
-	TextSelectingUtilities_MoveToStartOfNextWord_mD1CEFD9620822349FDE09237943F943EB512A8C2,
-	TextSelectingUtilities_MoveToEndOfPreviousWord_m5BE2565747FFC49AA41526504653159852FC50A7,
-	TextSelectingUtilities_MoveWordLeft_m7D8131CD2DF2DF180D3FC249E2F0E17E250E5D3D,
-	TextSelectingUtilities_MouseDragSelectsWholeWords_mB586078A58B5D56A53138856AB8DE9BD33535CC1,
-	TextSelectingUtilities_ExpandSelectGraphicalLineStart_m5E109D0A6A12D3D2FDF09F3E1407EB0347F7C4EF,
-	TextSelectingUtilities_ExpandSelectGraphicalLineEnd_mFCA738E71AADB3C1206F279BC2681CA906A36D74,
-	TextSelectingUtilities_DblClickSnap_m6472F8DA3F0FC46FF75FFB394B283F5E5EC834FA,
-	TextSelectingUtilities_MoveCursorToPosition_Internal_mE4AEE1AA57B8CCBB371C24B4F4B1AA2FF89886FD,
-	TextSelectingUtilities_SelectToPosition_m75C9B53E1227CF9D487D5C8D771F0D8ACFEDC2F8,
-	TextSelectingUtilities_FindNextSeperator_mCF332FBDFEA6BCB471EDF75D76A139A580DB0E2A,
-	TextSelectingUtilities_FindPrevSeperator_mD0F56A4106D376F28D6A0E8E07D7D4DAB9FF8C7E,
-	TextSelectingUtilities_FindStartOfNextWord_m3D436C6FB45B3574F6F436B7CBAD30F5372C6870,
-	TextSelectingUtilities_FindEndOfPreviousWord_mA7AF965D2F01728EE872F2CB3F03083ABA63D174,
-	TextSelectingUtilities_FindEndOfClassification_m134E7AB62A9E90595A3C6DCC1DD517515B85AB1A,
-	TextSelectingUtilities_ClampTextIndex_m04DED78B3B466D3E5AF59442F736A822ABC8D7E0,
-	TextSelectingUtilities_IndexOfEndOfLine_m9D87F72DC289F7095E615D97D821BBCE8D2B978B,
-	TextSelectingUtilities_PreviousCodePointIndex_mCE1A8A7E9180B182AEA4DB6562EBDE854A860C6D,
-	TextSelectingUtilities_NextCodePointIndex_mA936059BE65DAABE0446AFB5425BB4EA83392607,
-	TextSelectingUtilities_GetGraphicalLineStart_mEDB6AF99C1BBE0A1180AEE4FE67DDC0A223BD218,
-	TextSelectingUtilities_GetGraphicalLineEnd_mD956DB2F4EC24F3DE89069232733376B615D3204,
-	TextSelectingUtilities_Copy_m69701E12FFE465B70E677DCCCCF3148873A5FE0A,
-	TextSelectingUtilities_ClassifyChar_m887E3900015DB05F1EF0E5F4630748CCA5C3CD52,
-	TextSelectingUtilities__cctor_m1BF3037C1F9E014A61439D68EC47233930273A76,
 };
 extern void EventInterests_get_wantsMouseMove_m4CE6AE73062DE1E37A138ED365FE4D8C7894B9AA_AdjustorThunk (void);
 extern void EventInterests_set_wantsMouseMove_mFEA33E053185D63A19F60AA69E385C05CE795F0F_AdjustorThunk (void);
@@ -1197,15 +941,7 @@ extern void EventInterests_WantsEvent_mD34E2AD1F937EE03C9C29882672F400AD3C3E5B6_
 extern void EventInterests_WantsLayoutPass_m403675D6BA834A05764A2C2558ECBCE90C8D066B_AdjustorThunk (void);
 extern void ParentClipScope__ctor_m5251E311D308625C438134442CA69D75E872DCD4_AdjustorThunk (void);
 extern void ParentClipScope_Dispose_m39F5E11A8E9346D5ADE850A5A600A675589E786D_AdjustorThunk (void);
-extern void KeyEvent__ctor_m6CE8FDC8F0AFC375BECB2197E79948C1799FCD03_AdjustorThunk (void);
-extern void KeyEvent_get_key_mEACBCC58166C5020968ADE58DC8E7968715AC76B_AdjustorThunk (void);
-extern void KeyEvent_get_modifiers_m02F790682E61B3B3C807838052666EFD8549AB14_AdjustorThunk (void);
-extern void KeyEvent_ToString_m293CEADFA29FF9F716C952B1D8E28A36BD7F91AC_AdjustorThunk (void);
-extern void KeyEvent_PrintMembers_m2DD6B74091896314A02AF11DCE9D8B8CF12C2498_AdjustorThunk (void);
-extern void KeyEvent_GetHashCode_mDE5A22EB82A6342542725EAB1562A8203CC19E2E_AdjustorThunk (void);
-extern void KeyEvent_Equals_mB05F54FE4F3594FF94E97D60C70F9810B34B474D_AdjustorThunk (void);
-extern void KeyEvent_Equals_mD7CB565C1F082A24F37743EBCBAFEA318E99102A_AdjustorThunk (void);
-static Il2CppTokenAdjustorThunkPair s_adjustorThunks[17] = 
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[9] = 
 {
 	{ 0x06000050, EventInterests_get_wantsMouseMove_m4CE6AE73062DE1E37A138ED365FE4D8C7894B9AA_AdjustorThunk },
 	{ 0x06000051, EventInterests_set_wantsMouseMove_mFEA33E053185D63A19F60AA69E385C05CE795F0F_AdjustorThunk },
@@ -1216,16 +952,8 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[17] =
 	{ 0x06000056, EventInterests_WantsLayoutPass_m403675D6BA834A05764A2C2558ECBCE90C8D066B_AdjustorThunk },
 	{ 0x06000083, ParentClipScope__ctor_m5251E311D308625C438134442CA69D75E872DCD4_AdjustorThunk },
 	{ 0x06000084, ParentClipScope_Dispose_m39F5E11A8E9346D5ADE850A5A600A675589E786D_AdjustorThunk },
-	{ 0x060001EC, KeyEvent__ctor_m6CE8FDC8F0AFC375BECB2197E79948C1799FCD03_AdjustorThunk },
-	{ 0x060001ED, KeyEvent_get_key_mEACBCC58166C5020968ADE58DC8E7968715AC76B_AdjustorThunk },
-	{ 0x060001EE, KeyEvent_get_modifiers_m02F790682E61B3B3C807838052666EFD8549AB14_AdjustorThunk },
-	{ 0x060001EF, KeyEvent_ToString_m293CEADFA29FF9F716C952B1D8E28A36BD7F91AC_AdjustorThunk },
-	{ 0x060001F0, KeyEvent_PrintMembers_m2DD6B74091896314A02AF11DCE9D8B8CF12C2498_AdjustorThunk },
-	{ 0x060001F2, KeyEvent_GetHashCode_mDE5A22EB82A6342542725EAB1562A8203CC19E2E_AdjustorThunk },
-	{ 0x060001F3, KeyEvent_Equals_mB05F54FE4F3594FF94E97D60C70F9810B34B474D_AdjustorThunk },
-	{ 0x060001F4, KeyEvent_Equals_mD7CB565C1F082A24F37743EBCBAFEA318E99102A_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[589] = 
+static const int32_t s_InvokerIndices[461] = 
 {
 	16391,
 	16666,
@@ -1250,15 +978,15 @@ static const int32_t s_InvokerIndices[589] =
 	16463,
 	12631,
 	16679,
-	26981,
-	27520,
+	26984,
+	27524,
 	12562,
-	26730,
+	26733,
 	24241,
-	28740,
-	27520,
-	27518,
-	28740,
+	28746,
+	27524,
+	27522,
+	28746,
 	16679,
 	12560,
 	16679,
@@ -1270,8 +998,8 @@ static const int32_t s_InvokerIndices[589] =
 	16255,
 	16255,
 	16255,
-	28759,
-	27522,
+	28765,
+	27526,
 	16255,
 	16255,
 	16255,
@@ -1280,32 +1008,32 @@ static const int32_t s_InvokerIndices[589] =
 	8938,
 	16463,
 	16679,
-	26920,
+	26923,
 	24250,
 	24250,
 	24250,
 	24250,
-	26920,
-	26920,
-	26920,
-	27266,
-	27266,
+	26923,
+	26923,
+	26923,
+	27270,
+	27270,
 	24250,
-	26920,
-	26920,
-	27347,
-	26920,
-	26920,
+	26923,
+	26923,
+	27351,
+	26923,
+	26923,
 	24253,
-	26920,
+	26923,
 	24253,
 	24250,
 	24250,
-	27520,
+	27524,
 	24255,
-	26729,
+	26732,
 	24240,
-	26984,
+	26987,
 	16255,
 	12424,
 	16255,
@@ -1313,50 +1041,50 @@ static const int32_t s_InvokerIndices[589] =
 	16255,
 	8872,
 	8872,
-	28706,
-	27509,
-	28706,
-	27509,
-	28706,
-	27509,
-	28704,
-	27508,
-	28704,
-	27508,
-	28866,
-	27510,
-	27522,
-	28759,
-	27522,
-	28755,
-	27521,
-	24497,
-	21828,
-	24497,
-	21828,
-	21828,
-	28759,
+	28712,
+	27513,
+	28712,
+	27513,
+	28712,
+	27513,
+	28710,
+	27512,
+	28710,
+	27512,
+	28872,
+	27514,
+	27526,
+	28765,
+	27526,
+	28761,
+	27525,
+	24498,
+	21827,
+	24498,
+	21827,
+	21827,
+	28765,
 	17244,
-	27507,
-	27507,
-	27507,
-	27507,
-	27507,
-	27507,
+	27511,
+	27511,
+	27511,
+	27511,
+	27511,
+	27511,
 	6359,
 	12560,
-	28797,
-	28866,
-	28740,
-	28755,
-	27521,
+	28803,
+	28872,
+	28746,
+	28761,
+	27525,
 	24261,
-	21577,
-	28866,
-	27507,
-	27507,
-	27507,
-	21303,
+	21576,
+	28872,
+	27511,
+	27511,
+	27511,
+	21301,
 	6292,
 	16679,
 	12631,
@@ -1373,27 +1101,27 @@ static const int32_t s_InvokerIndices[589] =
 	12631,
 	6368,
 	2797,
-	27115,
-	28866,
+	27118,
+	28872,
 	16463,
-	28866,
-	27132,
-	27132,
+	28872,
+	27135,
+	27135,
 	5867,
-	27208,
+	27212,
 	24242,
 	23446,
 	23446,
 	24236,
-	27518,
 	27522,
-	21537,
-	28866,
-	28866,
-	24505,
-	27522,
-	27522,
-	28866,
+	27526,
+	21535,
+	28872,
+	28872,
+	24506,
+	27526,
+	27526,
+	28872,
 	24235,
 	24235,
 	12560,
@@ -1402,7 +1130,7 @@ static const int32_t s_InvokerIndices[589] =
 	16679,
 	16679,
 	16679,
-	28866,
+	28872,
 	16463,
 	12631,
 	16463,
@@ -1454,7 +1182,7 @@ static const int32_t s_InvokerIndices[589] =
 	16463,
 	12631,
 	16463,
-	28759,
+	28765,
 	16679,
 	16679,
 	10826,
@@ -1464,15 +1192,15 @@ static const int32_t s_InvokerIndices[589] =
 	6359,
 	16679,
 	12429,
-	28742,
+	28748,
 	16679,
 	16679,
 	6359,
 	23469,
 	16679,
 	24250,
-	27520,
-	26984,
+	27524,
+	26987,
 	16463,
 	12631,
 	16463,
@@ -1490,18 +1218,18 @@ static const int32_t s_InvokerIndices[589] =
 	16391,
 	16255,
 	16666,
-	26984,
-	27520,
+	26987,
+	27524,
 	10675,
 	10675,
 	573,
 	2032,
 	2484,
 	24474,
-	26730,
+	26733,
+	27526,
+	28765,
 	27522,
-	28759,
-	27518,
 	16679,
 	16679,
 	16463,
@@ -1513,122 +1241,118 @@ static const int32_t s_InvokerIndices[589] =
 	573,
 	1039,
 	375,
-	28759,
+	28765,
 	2483,
 	4920,
 	16463,
 	17358,
-	18721,
+	18717,
 	24448,
-	28866,
-	28866,
+	28872,
+	28872,
 	24250,
 	24250,
-	26983,
-	26920,
-	26920,
+	26986,
+	26923,
+	26923,
 	24253,
-	26729,
-	26920,
-	27266,
-	27266,
-	26729,
-	26729,
+	26732,
+	26923,
+	27270,
+	27270,
+	26732,
+	26732,
 	24251,
-	26920,
-	26920,
-	26729,
+	26923,
+	26923,
+	26732,
 	24250,
 	23347,
 	23347,
 	17345,
-	18694,
-	18693,
+	18691,
+	18690,
 	24202,
-	26715,
-	27520,
-	28742,
-	26984,
+	26718,
+	27524,
+	28748,
+	26987,
 	23280,
-	28816,
-	27536,
-	28740,
-	28704,
-	28759,
-	27522,
-	20620,
-	20620,
-	27522,
-	27522,
-	28866,
-	26923,
-	28866,
-	28866,
-	28704,
-	26727,
-	20837,
-	28759,
-	27518,
+	28822,
 	27540,
-	28740,
-	28740,
-	27518,
-	27518,
-	27109,
-	28866,
-	28866,
-	23264,
-	27508,
-	28740,
-	27518,
-	28866,
-	28866,
-	28740,
-	27518,
-	26727,
-	28866,
-	28759,
-	21533,
-	28866,
+	28746,
+	28710,
+	28765,
+	27526,
+	20618,
+	20618,
+	27526,
+	27526,
+	28872,
+	26926,
+	28872,
+	28872,
+	28710,
+	26730,
+	20835,
+	27522,
+	28746,
+	28746,
+	27522,
+	27522,
+	27112,
+	28872,
+	28872,
+	23263,
+	27512,
+	28746,
+	27522,
+	28872,
+	28872,
+	28746,
+	27522,
+	26730,
+	28872,
+	28765,
 	21531,
-	27518,
-	27518,
-	26730,
-	26730,
-	28866,
-	26730,
-	26730,
-	28704,
-	27508,
-	28866,
-	28866,
-	27210,
-	20477,
-	20476,
-	28866,
-	27507,
-	27507,
-	20617,
-	27520,
-	27520,
-	26920,
-	19680,
-	27507,
-	27507,
+	28872,
+	21529,
+	27522,
+	27522,
+	26733,
+	26733,
+	28872,
+	26733,
+	26733,
+	28710,
+	27512,
+	28872,
+	28872,
+	27214,
+	20475,
+	20474,
+	28872,
+	27511,
+	27511,
+	20615,
+	27524,
+	27524,
+	26923,
+	19677,
 	16679,
-	28866,
-	19607,
-	18248,
-	20478,
-	28866,
-	20780,
+	28872,
+	19604,
+	18246,
+	20476,
+	28872,
+	20778,
 	16573,
-	27268,
-	18911,
-	26918,
+	27272,
+	18907,
+	26921,
 	16255,
 	16679,
-	28866,
+	28872,
 	6502,
 	16463,
 	12631,
@@ -1646,7 +1370,7 @@ static const int32_t s_InvokerIndices[589] =
 	12631,
 	12631,
 	16463,
-	28866,
+	28872,
 	16391,
 	16391,
 	16391,
@@ -1660,7 +1384,7 @@ static const int32_t s_InvokerIndices[589] =
 	16679,
 	6503,
 	16463,
-	28866,
+	28872,
 	16679,
 	16679,
 	6503,
@@ -1670,63 +1394,15 @@ static const int32_t s_InvokerIndices[589] =
 	16679,
 	16679,
 	16679,
-	28742,
-	27520,
-	26984,
-	28759,
+	28748,
+	27524,
+	26987,
+	28765,
 	16463,
 	12631,
 	16679,
 	16679,
 	16679,
-	16255,
-	12424,
-	16391,
-	16391,
-	12560,
-	16391,
-	12560,
-	12560,
-	16391,
-	16391,
-	12560,
-	16463,
-	12631,
-	12631,
-	2797,
-	16255,
-	16255,
-	12821,
-	10806,
-	16679,
-	16679,
-	3841,
-	20241,
-	12560,
-	16255,
-	16255,
-	16255,
-	16255,
-	16255,
-	16255,
-	12631,
-	9116,
-	16255,
-	16255,
-	16255,
-	27115,
-	16679,
-	16255,
-	28866,
-	5808,
-	16391,
-	16391,
-	16463,
-	8938,
-	23087,
-	16391,
-	8938,
-	9414,
 	16255,
 	16463,
 	12631,
@@ -1740,90 +1416,14 @@ static const int32_t s_InvokerIndices[589] =
 	16679,
 	16679,
 	16679,
-	16255,
-	16255,
-	12424,
-	16391,
-	16391,
-	16463,
-	16391,
-	12560,
-	16391,
-	12560,
-	12560,
-	16391,
-	12560,
-	12560,
-	12560,
-	16463,
-	12631,
-	3841,
-	8872,
-	20242,
-	16679,
-	12424,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	16679,
-	12424,
-	16679,
-	16679,
-	12424,
-	6558,
-	12821,
-	10208,
-	10208,
-	10208,
-	10208,
-	4395,
-	10208,
-	10208,
-	10208,
-	10208,
-	10208,
-	10208,
-	16679,
-	10208,
-	28866,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_IMGUIModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_IMGUIModule_CodeGenModule = 
 {
 	"UnityEngine.IMGUIModule.dll",
-	589,
+	461,
 	s_methodPointers,
-	17,
+	9,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	0,

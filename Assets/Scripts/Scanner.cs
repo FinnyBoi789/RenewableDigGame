@@ -15,9 +15,9 @@ public class Scanner : MonoBehaviour
     [SerializeField] XRRayInteractor rayInteractor;
     [SerializeField] public InputActionProperty triggerAction;
     [SerializeField] UIManager uiManager;
-    [SerializeField] IndexScreen indexScreen;
     [SerializeField] AudioSource scannerAudioSource;
     [SerializeField] AudioClip scanningAudioClip;
+    [SerializeField] AudioClip miningAudioClip;
     [SerializeField] ScannerController scannerController;
     [SerializeField] GameObject notMineable;
 
@@ -26,6 +26,7 @@ public class Scanner : MonoBehaviour
     float loseTargetTimer = 0f;
     float loseTargetDelay = 0.2f;
     bool isScanningAudioPlaying = false;
+    bool isMiningAudioPlaying = false;
 
     Scannable currentTarget;
     Mineable currentMineTarget;
@@ -67,18 +68,28 @@ public class Scanner : MonoBehaviour
                 }
                 else
                 {
+                    if (!isMiningAudioPlaying)
+                    {
+                        scannerAudioSource.clip = miningAudioClip;
+                        scannerAudioSource.loop = true;
+                        scannerAudioSource.Play();
+                        isMiningAudioPlaying = true;
+                    }
+
                     if (Mine()) loseTargetTimer = 0f;
                     else
                     {
                         loseTargetTimer += Time.deltaTime;
                         if (loseTargetTimer >= loseTargetDelay)
                             ResetMine();
+                            StopMineAudio();
                     }
                 }
             }
             else
             {
                 StopScanAudio();
+                StopMineAudio();
                 ResetScan();
                 ResetMine();
             }
@@ -118,7 +129,6 @@ public class Scanner : MonoBehaviour
                         uiManager.ShowInfo(scannable.objectName, scannable.objectDescription);
                         if (!scannable.isLogged)
                         {
-                            indexScreen.AddEntry(scannable.objectName + ": " + scannable.objectDescription);
                             scannable.isLogged = true;
                             
                             Debug.Log("About to log scan");
@@ -161,6 +171,14 @@ public class Scanner : MonoBehaviour
         {
             scannerAudioSource.Stop();
             isScanningAudioPlaying = false;
+        }
+    }
+
+    void StopMineAudio(){
+        if (isMiningAudioPlaying)
+        {
+            scannerAudioSource.Stop();
+            isMiningAudioPlaying = false;
         }
     }
 

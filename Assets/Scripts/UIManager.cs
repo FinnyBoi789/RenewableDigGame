@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject scanPanel;
     [SerializeField] private TMPro.TextMeshProUGUI nameText;
     [SerializeField] private TMPro.TextMeshProUGUI descriptionText;
+    [SerializeField] private TMPro.TextMeshProUGUI progressLabel;
     [SerializeField] private Slider scanProgressSlider;
 
     public void ShowInfo(string name, string description)
@@ -32,14 +33,18 @@ public class UIManager : MonoBehaviour
     {
         scanPanel.SetActive(true);
         infoPanel.SetActive(false);
+
         scanProgressSlider.value = percent;
+        progressLabel.text = "Scanning... " + Mathf.RoundToInt(percent * 100f) + "%";
     }
 
     public void ShowMineProgress(float percent)
     {
         scanPanel.SetActive(true);
         infoPanel.SetActive(false);
+
         scanProgressSlider.value = percent;
+        progressLabel.text = "Mining... " + Mathf.RoundToInt(percent * 100f) + "%";
     }
 
     public void HideProgress()

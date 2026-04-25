@@ -17,7 +17,7 @@
           {
             "name": "AnimationClip",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -25,7 +25,7 @@
           {
             "name": "Animator",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -33,7 +33,7 @@
           {
             "name": "AnimatorController",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -47,7 +47,7 @@
           {
             "name": "Avatar",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -83,21 +83,23 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -110,13 +112,17 @@
           },
           {
             "name": "AudioResource",
-            "scenes": [],
-            "dependencyType": 1,
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
+            "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioSource",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -152,7 +158,7 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -171,7 +177,9 @@
           },
           {
             "name": "Cubemap",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -190,7 +198,7 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -204,7 +212,7 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -236,16 +244,14 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 1,
             "icon": null
           },
           {
             "name": "Light",
-            "scenes": [
-              "Assets/Scenes/BasicScene.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -257,20 +263,24 @@
           },
           {
             "name": "LightProbes",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "LightingSettings",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -278,7 +288,7 @@
           {
             "name": "LineRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -292,7 +302,7 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -300,7 +310,7 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -308,7 +318,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -316,7 +326,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -324,7 +334,7 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -338,7 +348,7 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -346,7 +356,7 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -384,21 +394,23 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "ReflectionProbe",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -430,7 +442,7 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -444,7 +456,7 @@
           {
             "name": "SkinnedMeshRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -458,7 +470,7 @@
           {
             "name": "SortingGroup",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -466,7 +478,7 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -497,18 +509,14 @@
           },
           {
             "name": "Texture",
-            "scenes": [
-              "Assets/Scenes/BasicScene.unity"
-            ],
-            "dependencyType": 0,
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
             "name": "Texture2D",
-            "scenes": [
-              "Assets/Scenes/BasicScene.unity"
-            ],
-            "dependencyType": 0,
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -887,6 +895,12 @@
             "icon": "package/com.unity.modules.inputforui"
           },
           {
+            "name": "Required by TextCoreTextEngine Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.textcoretextengine"
+          },
+          {
             "name": "Required by UIElements Module",
             "scenes": [],
             "dependencyType": 2,
@@ -981,13 +995,17 @@
         "dependencies": [
           {
             "name": "ParticleSystem",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "ParticleSystemRenderer",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           }
@@ -999,21 +1017,23 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "CapsuleCollider",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "CharacterController",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1027,7 +1047,7 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1041,14 +1061,16 @@
           {
             "name": "Rigidbody",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "SphereCollider",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -1464,7 +1486,7 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1507,21 +1529,23 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "CanvasGroup",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainScene_RECOVERED.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Scenes/BasicScene.unity"
+              "Assets/Scenes/MainScene_RECOVERED.unity"
             ],
             "dependencyType": 0,
             "icon": null
