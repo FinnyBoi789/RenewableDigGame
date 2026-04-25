@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "ScannerInputActions",
+    "maps": [
+        {
+            "name": "Scanner",
+            "id": "56449548-5fbb-4d28-968e-50fa609a8853",
+            "actions": [
+                {
+                    "name": "ModeToggle",
+                    "type": "Button",
+                    "id": "c8d2a0aa-1958-43f6-8665-d9111cdf14f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "529d3972-90d3-4734-8607-ba10b03bb71e",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ModeToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
