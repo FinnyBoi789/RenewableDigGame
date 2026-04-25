@@ -18,6 +18,9 @@ public class ButtonFollowVisual : MonoBehaviour
     private Vector3 offset;
     private bool freeze = false;
 
+    bool hasPressed = false;
+    public float pressThreshold = -0.02f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,13 +40,8 @@ public class ButtonFollowVisual : MonoBehaviour
             pokeAttachTransform = interactor.attachTransform;
             offset = visualTarget.position - pokeAttachTransform.position;
 
-            float pokeAngle = Vector3.Angle(offset, visualTarget.TransformDirection(localAxis));
-
-            if(pokeAngle < followAngleThreshold)
-            {
-                isFollowing = true;
-                freeze = false;
-            }
+            isFollowing = true;
+            freeze = false;
         }
     }
 
@@ -58,10 +56,9 @@ public class ButtonFollowVisual : MonoBehaviour
 
     public void Freeze(BaseInteractionEventArgs hover)
     {
-        if(hover.interactorObject is XRPokeInteractor)
+        if (hover.interactorObject is XRPokeInteractor)
         {
             freeze = true;
-            GameManager.Instance.SetState(GameState.checkedSpaceship);
             StartCoroutine(UnfreezeAfterDelay());
         }
     }
@@ -76,19 +73,29 @@ public class ButtonFollowVisual : MonoBehaviour
     void Update()
     {
         if (freeze)
-        {
             return;
-        }
 
         if (isFollowing)
         {
             Vector3 localTargetPosition = visualTarget.InverseTransformPoint(pokeAttachTransform.position + offset);
             Vector3 constrainedLocalTargetPosition = Vector3.Project(localTargetPosition, localAxis);
             visualTarget.position = visualTarget.TransformPoint(constrainedLocalTargetPosition);
+
+            if (!hasPressed && visualTarget.localPosition.y < pressThreshold)
+            {
+                hasPressed = true;
+                Debug.Log("BUTTON PRESSED");
+                GameManager.Instance.SetState(GameState.checkedSpaceship);
+            }
         }
         else
         {
             visualTarget.localPosition = Vector3.Lerp(visualTarget.localPosition, initialLocalPos, Time.deltaTime * resetSpeed);
+
+            if (visualTarget.localPosition.y >= pressThreshold)
+            {
+                hasPressed = false;
+            }
         }
     }
 }

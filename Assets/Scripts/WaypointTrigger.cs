@@ -3,19 +3,24 @@ using UnityEngine;
 
 public class WaypointTrigger : MonoBehaviour
 {
-    [SerializeField] private WaypointIndicator waypointIndicator;
+    [SerializeField] private GameObject waypointIndicator;
     [SerializeField] private Canvas waypointCanvas;
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private AudioSource waypointAudio;
     [SerializeField] private AudioClip waypoint;
+    public bool turbineWaypoint = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             waypointIndicator.gameObject.SetActive(false);
             waypointCanvas.gameObject.SetActive(false);
+            if (turbineWaypoint)
+            {
+                GameManager.Instance.SetState(GameState.waypointTriggered);    
+            }
+
             waypointAudio.PlayOneShot(waypoint);
-            GameManager.Instance.SetState(GameState.waypointTriggered);
+            
             // other things go here later
         }
     }

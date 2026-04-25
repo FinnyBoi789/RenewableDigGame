@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.IO.Enumeration;
-using System.Runtime.Serialization;
 
 public enum GameState
 {
@@ -22,18 +21,18 @@ public class GameManager : MonoBehaviour
     public GameState CurrentState { get; private set; } = GameState.Crashed;
 
     public int ObjectsScanned { get; private set; } = 0;
-    public int TotalObjects = 3; // set in Inspector
+    public int TotalObjects = 3;
+
+    public int SolarObjectsScanned {get; private set; } = 0;
+    public int SolarTotalObjects = 3;
+
+    private bool solarPhaseActive = false;
+    private bool solarUnlocked = false;
 
     [SerializeField] private WaypointIndicator waypointIndicator;
     [SerializeField] private GameObject waypoint;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip dopamineAudioClip;
-
-    public void LogScannedObject()
-    {
-        ObjectsScanned++;
-        Debug.Log("Objects scanned: " + ObjectsScanned);
-    }
 
     [SerializeField] private DialogueSequenceData crashDialogue;
     [SerializeField] private DialogueSequenceData scanner;
@@ -45,6 +44,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueSequenceData checkedSpaceship;
     [SerializeField] private DialogueSequenceData spaceshipFiredUp;
     [SerializeField] private ProgressScreen progressMenu;
+
+    [SerializeField] private GameObject[] solarWaypoints;
+
+    void ActivateSolarWaypoints()
+    {
+        foreach (var wp in solarWaypoints)
+        {
+            wp.SetActive(true);
+            
+        }
+    }
 
 
     void Awake() => Instance = this;
@@ -61,6 +71,33 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void LogScan()
+    {
+        Debug.Log("LOGSCAN CALLED");
+
+        ObjectsScanned++;
+        Debug.Log("Objects scanned: " + ObjectsScanned);
+
+        if (ObjectsScanned >= TotalObjects && CurrentState < GameState.ScannedEnvironment)
+        {
+            Debug.Log("SETTING ScannedEnvironment");
+            SetState(GameState.ScannedEnvironment);
+        }
+
+        if (solarPhaseActive && !solarUnlocked)
+        {
+            SolarObjectsScanned++;
+            Debug.Log("Solar scans: " + SolarObjectsScanned);
+
+            if (SolarObjectsScanned >= SolarTotalObjects)
+            {
+                solarUnlocked = true;
+                Debug.Log("ACTIVATING SOLAR WAYPOINTS");
+                audioSource.PlayOneShot(dopamineAudioClip);
+                ActivateSolarWaypoints();
+            }
+        }
+    }
 
     //Also handles updating the progress screen
     public void SetState(GameState newState)
@@ -99,6 +136,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.checkedSpaceship:
                 DialogueManager.Instance.PlaySequence(checkedSpaceship);
+                solarPhaseActive = true;
+                SolarObjectsScanned = 0;
+                Debug.Log("Solar Phase Started");
                 break;
             case GameState.spaceshipFiredUp:
                 DialogueManager.Instance.PlaySequence(spaceshipFiredUp);

@@ -87,6 +87,7 @@ public class Scanner : MonoBehaviour
 
     ScanResult Scan()
     {
+        Debug.Log("Scan running");
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             if (hit.collider == null) return ScanResult.None;
@@ -96,11 +97,11 @@ public class Scanner : MonoBehaviour
             if (scannable != null)
             {
                 Debug.Log("isScanned: " + scannable.isScanned);
-                if (currentTarget != scannable)
-                {
-                    ResetScan();
-                    currentTarget = scannable;
-                }
+                
+            if (currentTarget != scannable)
+            {
+                currentTarget = scannable;
+            }
 
                 if (!scannable.isScanned)
                 {
@@ -108,6 +109,7 @@ public class Scanner : MonoBehaviour
 
                     float percent = scannable.currentScan / scannable.scanDuration;
                     uiManager.ShowScanProgress(percent);
+                    Debug.Log("Progress: " + percent);
 
                     if (percent >= 1f)
                     {
@@ -118,7 +120,9 @@ public class Scanner : MonoBehaviour
                         {
                             indexScreen.AddEntry(scannable.objectName + ": " + scannable.objectDescription);
                             scannable.isLogged = true;
-                            GameManager.Instance.LogScannedObject();
+                            
+                            Debug.Log("About to log scan");
+                            GameManager.Instance.LogScan();
 
                             if (GameManager.Instance.CurrentState == GameState.HasScanner)
                             {
@@ -137,13 +141,16 @@ public class Scanner : MonoBehaviour
             }
            
         }
-
-        ResetScan();
         return ScanResult.None;
     }
 
     void ResetScan()
     {
+        if (currentTarget != null)
+        {
+            currentTarget.currentScan = 0f;
+        }
+
         currentTarget = null;
         uiManager.HideInfo();
         uiManager.HideProgress();

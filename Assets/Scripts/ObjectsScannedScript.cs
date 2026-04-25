@@ -22,16 +22,9 @@ public class ObjectsScannedScript : MonoBehaviour
 
         scannerMode.text = "Current Mode: " + scannerController.CurrentMode;
 
-        if (state == GameState.waypointTriggered)
+        if (state == GameState.ScannedEnvironment || state == GameState.waypointTriggered)
         {
             objectsScanned.text = "Environment Scanned!";
-            return;
-        }
-
-        if (scanned >= total && state != GameState.ScannedEnvironment)
-        {
-            objectsScanned.text = "Environment Scanned!";
-            GameManager.Instance.SetState(GameState.ScannedEnvironment);
         }
         else
         {

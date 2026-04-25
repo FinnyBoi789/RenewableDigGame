@@ -22,7 +22,6 @@ public class TurbineSocket : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("rb: " + turbineRigidbody + " mode: " + scannerController.CurrentMode + " trigger: " + scanner.triggerAction.action.IsPressed());
                 
         if (turbineMesh != null && scannerController.CurrentMode == ScannerMode.Mine && scanner.triggerAction.action.IsPressed())
         {
